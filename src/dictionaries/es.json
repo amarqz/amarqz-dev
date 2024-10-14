@@ -1,5 +1,4 @@
 {
-    "test": "Hola",
     "meta": {
         "description": "Portfolio del desarrollador full-stack amarqz",
         "keywords": [
@@ -17,5 +16,10 @@
             "Data Analyst",
             "Analista de datos"
         ]
+    },
+    "section": {
+        "education": "Educación",
+        "experience": "Experiencia",
+        "projects": "Proyectos"
     }
 }

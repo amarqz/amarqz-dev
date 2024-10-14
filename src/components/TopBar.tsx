@@ -9,7 +9,7 @@ import SectionSelector from "./SectionSelector";
 
 const TopBar = () => {
   return (
-    <div className="flex justify-between z-10 top-0 bg-neutral text-foreground px-4 sm:px-10 py-4 shadow-lg sticky w-full items-center">
+    <div className="h-16 flex justify-between z-30 top-0 bg-neutral text-foreground px-4 sm:px-10 py-4 shadow-lg sticky w-full items-center">
       <SectionSelector />
       <div className="basis-1/5 sm:basis-1/2 text-center text-2xl font-bold">
         amarqz.dev
