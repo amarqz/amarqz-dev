@@ -1,22 +1,11 @@
 import type { Metadata, ResolvingMetadata } from "next";
-import localFont from "next/font/local";
 import "../globals.css";
 import { getDictionary } from "./dictionaries";
+import TopBar from "@/components/TopBar";
 
 type Props = {
   params: { lang: string },
 };
-
-const geistSans = localFont({
-  src: "../fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "../fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
 
 export async function generateStaticParams() {
   return [{lang: 'es'}, {lang: 'en'}];
@@ -55,8 +44,9 @@ export default async function RootLayout({
   return (
     <html lang={ params.lang }>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`antialiased`}
       >
+        <TopBar />
         {children}
       </body>
     </html>

@@ -11,6 +11,9 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        neutral: "var(--neutral)",
+        onHover: "var(--onHover)",
+        secondary: "var(--secondary)"
       },
     },
   },
