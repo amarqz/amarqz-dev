@@ -2,8 +2,8 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { GitHub, Grading, LinkedIn } from "@/icons";
-import es from '@/../../public/es.svg';
-import en from '@/../../public/en.svg';
+import es from '@/../public/es.svg';
+import en from '@/../public/en.svg';
 import DarkModeButton from "./DarkModeButton";
 import SectionSelector from "./SectionSelector";
 

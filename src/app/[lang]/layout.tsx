@@ -4,19 +4,17 @@ import { getDictionary } from "./dictionaries";
 import TopBar from "@/components/TopBar";
 
 type Props = {
-  params: { lang: string },
+  params: Promise<{ lang: string }>,
 };
 
 export async function generateStaticParams() {
   return [{lang: 'es'}, {lang: 'en'}];
 };
 
-export async function generateMetadata(
-  { params } : Props,
-  parent: ResolvingMetadata
-) : Promise<Metadata> {
+export async function generateMetadata(props: Props, parent: ResolvingMetadata): Promise<Metadata> {
+  const params = await props.params;
   const dict = await getDictionary(params.lang);
-  
+
   return {
     title: {
       template: '%s | amarqz.dev',
@@ -33,13 +31,18 @@ export async function generateMetadata(
   }
 };
 
-export default async function RootLayout({
-  children,
-  params
-}: Readonly<{
-  children: React.ReactNode;
-  params: { lang: string };
-}>) {
+export default async function RootLayout(
+  props: Readonly<{
+    children: React.ReactNode;
+    params: { lang: string };
+  }>
+) {
+  const params = await props.params;
+
+  const {
+    children
+  } = props;
+
   const dict = await getDictionary(params.lang);
   return (
     <html lang={ params.lang }>

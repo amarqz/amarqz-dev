@@ -4,13 +4,11 @@ import { getDictionary } from "./dictionaries";
 import Section from "@/components/Section";
 
 type Props = {
-  params: { lang: string },
+  params: Promise<{ lang: string }>,
 };
 
-export async function generateMetadata(
-  { params } : Props,
-  parent: ResolvingMetadata
-) : Promise<Metadata> {
+export async function generateMetadata(props: Props, parent: ResolvingMetadata): Promise<Metadata> {
+  const params = await props.params;
   const dict = await getDictionary(params.lang);
 
   return {
@@ -18,7 +16,8 @@ export async function generateMetadata(
   }
 };
 
-export default async function Home({ params }: Props) {
+export default async function Home(props: Props) {
+  const params = await props.params;
   const dict = await getDictionary(params.lang);
   const sections = ['education', 'experience', 'projects'];
 
