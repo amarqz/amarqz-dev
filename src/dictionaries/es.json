@@ -1,4 +1,8 @@
 {
+    "controls": {
+        "seeLess": "Ver menos",
+        "seeMore": "Ver más"
+    },
     "meta": {
         "description": "Portfolio del desarrollador full-stack amarqz",
         "keywords": [

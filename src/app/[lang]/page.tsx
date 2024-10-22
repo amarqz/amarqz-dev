@@ -23,9 +23,9 @@ export default async function Home({ params }: Props) {
   const sections = ['education', 'experience', 'projects'];
 
   return (
-    <div className="flex flex-col px-12 gap-12">
+    <div className="flex flex-col px-8 sm:px-12 gap-12">
       { sections.map( (section, i) => 
-          <Section key={ i } title={ dict.section[section] } reference={ section } lang={ params.lang } />
+          <Section key={ i } title={ dict.section[section] } section={ section } locale={ params.lang } />
         )
       }
     </div>

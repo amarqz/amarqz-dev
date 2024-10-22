@@ -12,6 +12,8 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
         neutral: "var(--neutral)",
+        subNeutral: "var(--subNeutral)",
+        accent: "var(--accent)",
         onHover: "var(--onHover)",
         secondary: "var(--secondary)"
       },

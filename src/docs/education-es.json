@@ -1,0 +1,29 @@
+{
+    "MSC2": {
+        "type": "Formación universitaria",
+        "title": "Máster en Ingeniería de la Automatización",
+        "where": "Politecnico di Milano",
+        "country": "IT",
+        "score": "Nota final: 110/110",
+        "thesis": "Lorem ipsum",
+        "link": "https://google.com"
+    },
+    "MSC1": {
+        "type": "Formación universitaria",
+        "title": "Máster en Ingeniería Industrial",
+        "where": "Universidad Politécnica de Madrid",
+        "country": "ES",
+        "score": "Nota final: 9.07/10",
+        "thesis": "Lorem ipsum",
+        "link": "https://google.com"
+    },
+    "BSC": {
+        "type": "Formación universitaria",
+        "title": "Grado en Ingeniería en Tecnologías Industriales",
+        "where": "Universidad de Málaga",
+        "country": "ES",
+        "score": "Nota final: 8.45/10",
+        "thesis": "Lorem ipsum",
+        "link": "https://google.com"
+    }
+}
