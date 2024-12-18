@@ -1,3 +1,52 @@
 {
-    "o": "hola"
+    "MSC2": {
+        "type": "University",
+        "title": "MSc. in Automation and Control Engineering",
+        "where": "Politecnico di Milano (PoliMi)",
+        "country": "IT",
+        "date": "Sept. 2021 - May 2023",
+        "score": "Final score: 110/110",
+        "thesis": "Lorem ipsum",
+        "link": "https://www.polimi.it/en/education/laurea-magistrale-programmes/programme-detail/automation-and-control-engineering"
+    },
+    "MSC1": {
+        "type": "University",
+        "title": "MSc. in Industrial Engineering",
+        "where": "Universidad Politécnica de Madrid (UPM)",
+        "country": "ES",
+        "date": "Sept. 2020 - May 2023",
+        "score": "Final score: 9.07/10",
+        "thesis": "Lorem ipsum",
+        "link": "https://www.upm.es/Estudiantes/Estudios_Titulaciones/Estudios_Master/Programas?id=5.11&fmt=detail"
+    },
+    "BSC": {
+        "type": "University",
+        "title": "BSc. in Industrial Technologies Engineering",
+        "where": "Universidad de Málaga (UMA)",
+        "country": "ES",
+        "date": "Oct. 2016 - June 2020",
+        "score": "Final score: 8.45/10",
+        "thesis": "Lorem ipsum",
+        "link": "https://www.uma.es/grado-en-ingenieria-en-tecnologias-industriales"
+    },
+    "Scrum" : {
+        "type": "Certification",
+        "title": "PSD I - Professional Scrum Developer",
+        "where": "Scrum.org",
+        "country": "Online",
+        "date": "October 2024",
+        "score": "Passed",
+        "thesis": "Lorem ipsum",
+        "link": "https://www.scrum.org/assessments/professional-scrum-developer-certification"
+    },
+    "PCAP": {
+        "type": "Certification",
+        "title": "PCAP - Certified Associate in Python Programming",
+        "where": "OpenEDG Python Institute",
+        "country": "Online",
+        "date": "May 2024",
+        "score": "Passed",
+        "thesis": "Lorem ipsum",
+        "link": "https://pythoninstitute.org/pcap"
+    }
 }

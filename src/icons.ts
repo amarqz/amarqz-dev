@@ -1,4 +1,5 @@
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import CodeIcon from '@mui/icons-material/Code';
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import ExpandLessOutlinedIcon from '@mui/icons-material/ExpandLessOutlined';
@@ -9,11 +10,13 @@ import LightModeIcon from "@mui/icons-material/LightMode";
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import MenuBookOutlinedIcon from '@mui/icons-material/MenuBookOutlined';
+import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import SchoolIcon from '@mui/icons-material/School';
 import SchoolOutlinedIcon from '@mui/icons-material/SchoolOutlined';
 import WorkHistoryIcon from '@mui/icons-material/WorkHistory';
 
 export const ArrowDropDown = ArrowDropDownIcon;
+export const CalendarMonth = CalendarMonthIcon;
 export const Code = CodeIcon;
 export const DarkMode = DarkModeIcon;
 export const ExpandLessOutlined = ExpandLessOutlinedIcon;
@@ -24,6 +27,7 @@ export const LightMode = LightModeIcon;
 export const LinkedIn = LinkedInIcon;
 export const LocationOnOutlined = LocationOnOutlinedIcon;
 export const MenuBookOutlined = MenuBookOutlinedIcon;
+export const OpenInNew = OpenInNewIcon;
 export const School = SchoolIcon;
 export const SchoolOutlined = SchoolOutlinedIcon;
 export const WorkHistory = WorkHistoryIcon;

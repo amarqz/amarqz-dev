@@ -25,6 +25,10 @@
   }
 }
 
+.interpolate {
+  interpolate-size: allow-keywords;
+}
+
 body {
   color: var(--foreground);
   background: var(--background);

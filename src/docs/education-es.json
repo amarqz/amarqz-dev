@@ -4,26 +4,49 @@
         "title": "Máster en Ingeniería de la Automatización",
         "where": "Politecnico di Milano",
         "country": "IT",
+        "date": "Sept. 2021 - Mayo 2023",
         "score": "Nota final: 110/110",
         "thesis": "Lorem ipsum",
-        "link": "https://google.com"
+        "link": "https://www.polimi.it/en/education/laurea-magistrale-programmes/programme-detail/automation-and-control-engineering"
     },
     "MSC1": {
         "type": "Formación universitaria",
         "title": "Máster en Ingeniería Industrial",
         "where": "Universidad Politécnica de Madrid",
         "country": "ES",
+        "date": "Sept. 2020 - Mayo 2023",
         "score": "Nota final: 9.07/10",
         "thesis": "Lorem ipsum",
-        "link": "https://google.com"
+        "link": "https://www.upm.es/Estudiantes/Estudios_Titulaciones/Estudios_Master/Programas?id=5.11&fmt=detail"
     },
     "BSC": {
         "type": "Formación universitaria",
         "title": "Grado en Ingeniería en Tecnologías Industriales",
         "where": "Universidad de Málaga",
         "country": "ES",
+        "date": "Oct. 2016 - Jun. 2020",
         "score": "Nota final: 8.45/10",
         "thesis": "Lorem ipsum",
-        "link": "https://google.com"
+        "link": "https://www.uma.es/grado-en-ingenieria-en-tecnologias-industriales"
+    },
+    "Scrum" : {
+        "type": "Certificación",
+        "title": "PSD I - Professional Scrum Developer",
+        "where": "Scrum.org",
+        "country": "En línea",
+        "date": "Octubre 2024",
+        "score": "Superado",
+        "thesis": "Lorem ipsum",
+        "link": "https://www.scrum.org/assessments/professional-scrum-developer-certification"
+    },
+    "PCAP": {
+        "type": "Certificación",
+        "title": "PCAP - Certified Associate in Python Programming",
+        "where": "OpenEDG Python Institute",
+        "country": "En línea",
+        "date": "Mayo 2024",
+        "score": "Superado",
+        "thesis": "Lorem ipsum",
+        "link": "https://pythoninstitute.org/pcap"
     }
 }
