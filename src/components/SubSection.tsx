@@ -28,8 +28,16 @@ const SubSection = ({ type, content, isHidden }: Props) => {
             </div>
         </div>
     );
+    case "experience":
+      return (
+        <div className={`flex flex-col bg-subNeutral rounded-2xl p-6 justify-between`}>
+            <div className="mb-4">
+                o
+            </div>
+        </div>
+      );
     default:
-      return <div>ey</div>;
+      return <div>Blank section</div>;
   }
 };
 

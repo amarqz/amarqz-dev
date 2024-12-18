@@ -15,7 +15,7 @@ const SubSectionGenerator = ({ subsections, section, dict }: Props) => {
 
   return (
     <>
-      <div className="bg-neutral p-6 sm:p-8 rounded-3xl grid grid-flow-row-dense lg:grid-cols-3 md:grid-cols-2 gap-6">
+      <div className={`bg-neutral p-6 sm:p-8 rounded-3xl grid grid-flow-row-dense gap-6 ${ section == 'education' ? 'lg:grid-cols-3 md:grid-cols-2' : '' }`}>
         {Object.values(subsections).map((subsection, i) => (
           <SubSection
             key={i}
