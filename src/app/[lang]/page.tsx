@@ -19,7 +19,7 @@ export async function generateMetadata(props: Props, parent: ResolvingMetadata):
 export default async function Home(props: Props) {
   const params = await props.params;
   const dict = await getDictionary(params.lang);
-  const sections = ['education', 'experience', 'projects'];
+  const sections = ['experience', 'education', 'projects'];
 
   return (
     <div className="flex flex-col px-8 sm:px-12 gap-12">
