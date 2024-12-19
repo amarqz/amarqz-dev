@@ -20,6 +20,6 @@ export function middleware(request: NextRequest) {
 export const config = {
   // Matcher ignoring `/_next/` and `/api/`
   matcher: [
-    "/((?!api|_next/static|_next/image|favicon|vercel.svg|next.svg|fonts/|share/|branding/|troncodrilo-game|game_assets/|game-index.js).*)",
+    "/((?!api|_next/static|_next/image|favicon|image/).*)",
   ],
 };

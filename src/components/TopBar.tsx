@@ -2,8 +2,6 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { GitHub, Grading, LinkedIn } from "@/icons";
-import es from '@/../public/es.svg';
-import en from '@/../public/en.svg';
 import DarkModeButton from "./DarkModeButton";
 import SectionSelector from "./SectionSelector";
 
@@ -20,7 +18,7 @@ const TopBar = () => {
         <Link target="_blank" href={"https://www.credly.com/users/antonio-marquez-picon"} className="hidden sm:block hover:bg-onHover p-1 rounded-md transition-all"><Grading /></Link>
         <span className="hidden sm:block bg-secondary w-0.5 rounded"></span>
         <DarkModeButton />
-        <div className="hover:bg-onHover p-1 rounded-md transition-all"><Image src={es} alt={'Spanish flag'} className='rounded-lg h-6 w-6 min-w-6'></Image></div>
+        <div className="hover:bg-onHover p-1 rounded-md transition-all"><Image src={'/image/es.svg'} width={"1300"} height={"650"} alt={'Spanish flag'} className='rounded-lg h-6 w-6 min-w-6'></Image></div>
       </div>
     </div>
   );
