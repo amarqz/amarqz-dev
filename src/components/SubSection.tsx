@@ -42,7 +42,7 @@ const SubSection = ({ type, content, isHidden, dict }: Props) => {
         <div className={`flex flex-col bg-subNeutral rounded-2xl p-6 justify-between`}>
             <div className="mb-4">
                 <div className="flex items-center gap-3 md:gap-6 mb-4">
-                  <h4 className="ml-auto md:ml-0 md:mr-5 order-last md:-order-1">{ content.length }</h4>
+                  <h4 className="ml-auto md:ml-0 md:mr-5 order-last md:-order-1">{ content.duration }</h4>
                   <Image src={ content.image.src } alt={ content.image.alt } width={ content.image.width } height={ content.image.height } className="w-8 rounded-md" />
                   <h2>{ content.company }</h2>
                 </div>

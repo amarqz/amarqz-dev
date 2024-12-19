@@ -7,7 +7,7 @@
           "src": "/image/VIEWNEXT.png",
           "width": 150
         },
-        "length": "Current",
+        "duration": "Current",
         "projects": [
             { 
               "role": "Python Developer",

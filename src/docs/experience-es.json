@@ -7,7 +7,7 @@
           "src": "/image/VIEWNEXT.png",
           "width": 150
         },
-        "length": "Actual",
+        "duration": "Actual",
         "projects": [
             { 
               "role": "Desarrollador Python",
