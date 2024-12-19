@@ -3,6 +3,9 @@
         "seeLess": "Ver menos",
         "seeMore": "Ver más"
     },
+    "education": {
+        "skills": "Tecnologías"
+    },
     "meta": {
         "description": "Portfolio del desarrollador full-stack amarqz",
         "keywords": [

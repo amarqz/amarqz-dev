@@ -1,3 +1,4 @@
+import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import CodeIcon from '@mui/icons-material/Code';
@@ -15,6 +16,7 @@ import SchoolIcon from '@mui/icons-material/School';
 import SchoolOutlinedIcon from '@mui/icons-material/SchoolOutlined';
 import WorkHistoryIcon from '@mui/icons-material/WorkHistory';
 
+export const ArrowCircleRight = ArrowCircleRightIcon;
 export const ArrowDropDown = ArrowDropDownIcon;
 export const CalendarMonth = CalendarMonthIcon;
 export const Code = CodeIcon;

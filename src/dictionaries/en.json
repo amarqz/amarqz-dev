@@ -3,6 +3,9 @@
         "seeLess": "See less",
         "seeMore": "See more"
     },
+    "education": {
+        "skills": "Main skills"
+    },
     "meta": {
         "description": "Full-stack developer amarqz's portfolio page",
         "keywords": [

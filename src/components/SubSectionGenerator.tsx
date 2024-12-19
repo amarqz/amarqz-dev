@@ -22,6 +22,7 @@ const SubSectionGenerator = ({ subsections, section, dict }: Props) => {
             type={section}
             content={subsection}
             isHidden={isHidden}
+            dict={dict}
           />
         ))}
       </div>

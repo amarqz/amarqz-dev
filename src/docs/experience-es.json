@@ -1,3 +1,28 @@
 {
-    "hola": "hola"
+    "VIEWNEXT": {
+        "company": "VIEWNEXT",
+        "image": {
+          "alt": "Logo de VIEWNEXT",
+          "height": 150,
+          "src": "/image/VIEWNEXT.png",
+          "width": 150
+        },
+        "length": "Actual",
+        "projects": [
+            { 
+              "role": "Desarrollador Python",
+              "dates": "Dic. 2023 - act.",
+              "description": [
+                "Tareas de integración de datos. Desarrollo y mantenimiento de interfaces de carga y extracción de datos.", 
+                "Desarrollo de cuadros de mando en PowerBI para la gestión eficaz de proyectos."],
+              "skills": ["Python", "Oracle SQL", "PowerBI", "Shell scripting"]
+            },
+            { 
+              "role": "Desarrollador Java",
+              "dates": "Oct. 2024 - act.",
+              "description": ["Tareas de desarrollo y mantenimiento de APIs."],
+              "skills": ["Java", "Shell scripting", "SAS", "Teradata SQL", "Oracle SQL"]
+            }
+        ]
+    }
 }
