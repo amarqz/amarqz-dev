@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowCircleRight, CalendarMonth, LocationOnOutlined, MenuBookOutlined, OpenInNew, SchoolOutlined } from '@/icons';
+import { ArrowCircleRight, CalendarMonth, LocationOnOutlined, Lock, MenuBookOutlined, OpenInNew, SchoolOutlined } from '@/icons';
 
 type Project = {
   role: string,
@@ -25,7 +25,10 @@ const SubSection = ({ type, content, isHidden, dict }: Props) => {
             <div className="mb-4">
                 <div className="flex justify-between items-center mb-1">
                   <h3>{ content.type }</h3>
-                  <Link href={ content.link } target="_blank"><OpenInNew className="text-accent hover:text-black dark:hover:text-white transition-all duration-200" /></Link>
+                  <div className="group relative">
+                    <Link href={ content.link } target="_blank"><OpenInNew className="text-accent hover:text-black dark:hover:text-white transition-all duration-200" /></Link>
+                    <span className="pointer-events-none z-10 absolute w-max -top-9 left-1/2 transform -translate-x-1/2 opacity-0 transition-opacity group-hover:opacity-100 bg-foreground text-background px-2 py-1 rounded-md">{ dict.tooltip.newtab }</span>
+                  </div>
                 </div>
                 <h2>{ content.title }</h2>
             </div>
@@ -69,7 +72,14 @@ const SubSection = ({ type, content, isHidden, dict }: Props) => {
         <div className="flex flex-wrap items-center gap-3 md:gap-6 mb-6">
           <h4 style={{backgroundColor: `${ content.statusType }`}} className="ml-auto md:ml-0 md:mr-5 order-last md:-order-1">{ content.status }</h4>
           <h2>{ content.name }</h2>
-          { content.url === null ? '' : <Link href={ content.url } target="_blank" className="md:ml-auto"><OpenInNew className="text-accent hover:text-black dark:hover:text-white transition-all duration-200" /></Link> }
+          <div className="group relative">
+            { content.url === null ? 
+            <Lock className="text-error cursor-not-allowed" /> : 
+            <Link href={ content.url } target="_blank" className="md:ml-auto"><OpenInNew className="text-accent hover:text-black dark:hover:text-white transition-all duration-200" /></Link> }
+            <span className="pointer-events-none z-10 absolute w-max -top-9 left-1/2 transform -translate-x-1/2 opacity-0 transition-opacity group-hover:opacity-100 bg-foreground text-background px-2 py-1 rounded-md">{ 
+            content.url === null ? dict.tooltip.private : dict.tooltip.newtab
+            }</span>
+          </div>
         </div>
         <div className="grid md:grid-cols-3 gap-10 items-center">
             <div className="flex flex-col gap-6">

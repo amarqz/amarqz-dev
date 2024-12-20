@@ -24,6 +24,10 @@
             "Analista de datos"
         ]
     },
+    "tooltip": {
+        "newtab": "Abrir en nueva pestaña",
+        "private": "Proyecto privado"
+    },
     "section": {
         "education": "Educación",
         "experience": "Experiencia",

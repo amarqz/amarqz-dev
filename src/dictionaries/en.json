@@ -21,6 +21,10 @@
             "Data Analyst"
         ]
     },
+    "tooltip": {
+        "newtab": "Open in new tab",
+        "private": "Private project"
+    },
     "section": {
         "education": "Education",
         "experience": "Experience",

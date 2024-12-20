@@ -12,6 +12,7 @@
   --onHover: #d9efff;
   --secondary: #d3c1a5;
   --next: #000;
+  --error: #FF3B3F;
 }
 
 @media (prefers-color-scheme: dark) {

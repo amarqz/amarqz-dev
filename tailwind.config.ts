@@ -16,7 +16,8 @@ const config: Config = {
         accent: "var(--accent)",
         onHover: "var(--onHover)",
         secondary: "var(--secondary)",
-        next: "var(--next)"
+        next: "var(--next)",
+        error: "var(--error)"
       },
     },
   },
