@@ -11,6 +11,7 @@
   --accent: #4a90e2;
   --onHover: #d9efff;
   --secondary: #d3c1a5;
+  --next: #000;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,6 +23,7 @@
     --accent: #BB86FC;
     --onHover: #333f4f;
     --secondary: #8e7e6f;
+    --next: #fff;
   }
 }
 
@@ -64,6 +66,15 @@ h4 {
   font-weight: bold;
   color: var(--neutral);
   background-color: var(--accent);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+h5 {
+  text-transform: uppercase;
+  font-size: small;
+  font-weight: bold;
+  color: var(--neutral);
   padding: 2px 6px;
   border-radius: 4px;
 }

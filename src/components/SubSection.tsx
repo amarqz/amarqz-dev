@@ -63,6 +63,30 @@ const SubSection = ({ type, content, isHidden, dict }: Props) => {
             </div>
         </div>
       );
+    case "projects":
+    return (
+      <div className={`flex flex-col bg-subNeutral rounded-2xl p-6 justify-between`}>
+        <div className="flex flex-wrap items-center gap-3 md:gap-6 mb-6">
+          <h4 style={{backgroundColor: `${ content.statusType }`}} className="ml-auto md:ml-0 md:mr-5 order-last md:-order-1">{ content.status }</h4>
+          <h2>{ content.name }</h2>
+          { content.url === null ? '' : <Link href={ content.url } target="_blank" className="md:ml-auto"><OpenInNew className="text-accent hover:text-black dark:hover:text-white transition-all duration-200" /></Link> }
+        </div>
+        <div className="grid md:grid-cols-3 gap-10 items-center">
+            <div className="flex flex-col gap-6">
+              <div className="bg-neutral p-6 rounded-2xl flex flex-wrap gap-4 justify-center">
+                { Object.entries(content.technologies).map(([tech, color], i: number) => (
+                  <h5 key={i} style={{backgroundColor: `${ color }`}}>{ tech }</h5>
+                )) }
+              </div>
+            </div>
+            <div className="md:col-span-2 flex flex-col">
+              { content.description.map((description: string, i: number) => (
+                <span key={i} className="cardEntry"><ArrowCircleRight />    { description }</span>
+              )) }
+            </div>
+        </div>
+      </div>
+    );
     default:
       return <div>Blank section</div>;
   }

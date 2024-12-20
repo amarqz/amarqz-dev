@@ -1,3 +1,73 @@
 {
-    "hola": "hola"
+    "web-portfolio": {
+        "description": [
+            "hola", "adios"
+        ],
+        "name": "Portfolio",
+        "status": "En producción",
+        "statusType": "#34C759",
+        "technologies": {
+            "Next.js": "var(--next)",
+            "Node.js": "#8BC34A",
+            "React": "#61DAFB",
+            "Tailwind CSS": "#38B2AC",
+            "TypeScript": "#3178C6"
+        },
+        "url": "https://amarqz.dev"
+    },
+    "troncodrilo": {
+        "description": [
+            "hola", "adios"
+        ],
+        "name": "Tienda de ropa online",
+        "status": "En desarrollo",
+        "statusType": "#2196F3",
+        "technologies": {
+            "Next.js": "var(--next)",
+            "Node.js": "#8BC34A",
+            "React": "#61DAFB",
+            "Tailwind CSS": "#38B2AC",
+            "TypeScript": "#3178C6"
+        },
+        "url": ""
+    },
+    "container2back": {
+        "description": [
+            "hola", "adios"
+        ],
+        "name": "container2back",
+        "status": "En producción",
+        "statusType": "#34C759",
+        "technologies": {
+            "Docker": "#2496ED",
+            "Shell": "#8BC34A"
+        },
+        "url": "https://github.com/amarqz/container2back"
+    },
+    "pi-attend": {
+        "description": [
+            "hola", "adios"
+        ],
+        "name": "pi-attend",
+        "status": "Completado",
+        "statusType": "#34C759",
+        "technologies": {
+            "NFC": "#03A9F4",
+            "Raspberry-Pi": "#C51A4A",
+            "Python": "#3776AB"
+        },
+        "url": "https://github.com/amarqz/pi-attend"
+    },
+    "viviani": {
+        "description": [
+            "hola", "adios"
+        ],
+        "name": "Dome of Viviani Windows",
+        "status": "Completado",
+        "statusType": "#34C759",
+        "technologies": {
+            "Wolfram Mathematica": "#D35400"
+        },
+        "url": "https://demonstrations.wolfram.com/DomeOfVivianiWindows/"
+    }
 }

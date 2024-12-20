@@ -15,7 +15,8 @@ const config: Config = {
         subNeutral: "var(--subNeutral)",
         accent: "var(--accent)",
         onHover: "var(--onHover)",
-        secondary: "var(--secondary)"
+        secondary: "var(--secondary)",
+        next: "var(--next)"
       },
     },
   },
