@@ -1,10 +1,11 @@
 {
     "web-portfolio": {
         "description": [
-            "hola", "adios"
+            "Web-based CV/resumé",
+            "Alive project, constantly evolving"
         ],
         "name": "Portfolio",
-        "status": "En producción",
+        "status": "In production",
         "statusType": "#34C759",
         "technologies": {
             "Next.js": "var(--next)",
@@ -13,14 +14,15 @@
             "Tailwind CSS": "#38B2AC",
             "TypeScript": "#3178C6"
         },
-        "url": "https://amarqz.dev"
+        "url": "https://github.com/amarqz/amarqz-dev"
     },
     "troncodrilo": {
         "description": [
-            "hola", "adios"
+            "Online clothing store webpage",
+            "Back-end under development"
         ],
-        "name": "Tienda de ropa online",
-        "status": "En desarrollo",
+        "name": "Online clothing store",
+        "status": "Under dev.",
         "statusType": "#2196F3",
         "technologies": {
             "Next.js": "var(--next)",
@@ -33,10 +35,13 @@
     },
     "container2back": {
         "description": [
-            "hola", "adios"
+            "Docker container for automating and scheduling file and folder back-ups",
+            "Cron expression based scheduling",
+            "Ability to send back-ups to a remote host",
+            "Security enhanced with PGP encryption"
         ],
         "name": "container2back",
-        "status": "En producción",
+        "status": "In production",
         "statusType": "#34C759",
         "technologies": {
             "Docker": "#2496ED",
@@ -46,24 +51,29 @@
     },
     "pi-attend": {
         "description": [
-            "hola", "adios"
+            "Attendance control system with NFC cards",
+            "On-premise, with simple hardware: Raspberry Pi, PN532 NFC sensor, NTAG215 tags, buzzer, LCD screen + keypad",
+            "Ability to connect to a Pocketbase database through its REST API"
         ],
         "name": "pi-attend",
-        "status": "Completado",
+        "status": "Completed",
         "statusType": "#34C759",
         "technologies": {
+            "Arduino": "#00979D",
             "NFC": "#03A9F4",
-            "Raspberry-Pi": "#C51A4A",
-            "Python": "#3776AB"
+            "Python": "#3776AB",
+            "Raspberry-Pi": "#C51A4A"
         },
         "url": "https://github.com/amarqz/pi-attend"
     },
     "viviani": {
         "description": [
-            "hola", "adios"
+            "Animated demonstration Viviani's curve creation on a semisphere and a cylinder intersection when disposed at a certain way",
+            "Allows visializing the creation of a dome made of Viviani's curves along its surface while displacing the cylinder",
+            "Allows setting the number of curves to visualize"
         ],
         "name": "Dome of Viviani Windows",
-        "status": "Completado",
+        "status": "Completed",
         "statusType": "#34C759",
         "technologies": {
             "Wolfram Mathematica": "#D35400"

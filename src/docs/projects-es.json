@@ -1,7 +1,8 @@
 {
     "web-portfolio": {
         "description": [
-            "hola", "adios"
+            "Currículum Vitae en formato web",
+            "Proyecto incremental en constante evolución"
         ],
         "name": "Portfolio",
         "status": "En producción",
@@ -13,11 +14,12 @@
             "Tailwind CSS": "#38B2AC",
             "TypeScript": "#3178C6"
         },
-        "url": "https://amarqz.dev"
+        "url": "https://github.com/amarqz/amarqz-dev"
     },
     "troncodrilo": {
         "description": [
-            "hola", "adios"
+            "Página web para una tienda de ropa online",
+            "Back-end aún en proyecto"
         ],
         "name": "Tienda de ropa online",
         "status": "En desarrollo",
@@ -33,7 +35,10 @@
     },
     "container2back": {
         "description": [
-            "hola", "adios"
+            "Contenedor de Docker que automatiza y programa las copias de seguridad de archivos y carpetas",
+            "Programación mediante expresiones cron",
+            "Envío de las copias de seguridad a destinos remotos",
+            "Seguridad asegurada con encriptación PGP"
         ],
         "name": "container2back",
         "status": "En producción",
@@ -46,21 +51,27 @@
     },
     "pi-attend": {
         "description": [
-            "hola", "adios"
+            "Sistema de control de asistencia con tarjetas NFC",
+            "Hardware propio y sencillo: Raspberry Pi, sensor NFC PN532, tarjetas NTAG215, zumbador, pantalla LDC con botonera",
+            "Adaptado para conectar con una base de datos de Pocketbase a través de su API REST",
+            "El proyecto de desarrollo de un portal web quedó abandonado"
         ],
         "name": "pi-attend",
         "status": "Completado",
         "statusType": "#34C759",
         "technologies": {
+            "Arduino": "#00979D",
             "NFC": "#03A9F4",
-            "Raspberry-Pi": "#C51A4A",
-            "Python": "#3776AB"
+            "Python": "#3776AB",
+            "Raspberry-Pi": "#C51A4A"
         },
         "url": "https://github.com/amarqz/pi-attend"
     },
     "viviani": {
         "description": [
-            "hola", "adios"
+            "Animación de la confección de la curva de Viviani mediante la intersección de una semiesfera y un cilindro dispuestos de cierta forma",
+            "Permite visualizar la creación de un domo de curvas de Viviani mediante la traslación del cilindro",
+            "Permite cambiar el número de curvas a visualizar"
         ],
         "name": "Dome of Viviani Windows",
         "status": "Completado",

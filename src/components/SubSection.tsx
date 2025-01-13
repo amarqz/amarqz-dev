@@ -91,7 +91,7 @@ const SubSection = ({ type, content, isHidden, dict }: Props) => {
             </div>
             <div className="md:col-span-2 flex flex-col">
               { content.description.map((description: string, i: number) => (
-                <span key={i} className="cardEntry"><ArrowCircleRight />    { description }</span>
+                <span key={i} className="cardEntry mb-1"><ArrowCircleRight />    { description }</span>
               )) }
             </div>
         </div>
