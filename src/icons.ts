@@ -1,9 +1,7 @@
 import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import CodeIcon from '@mui/icons-material/Code';
 import DarkModeIcon from "@mui/icons-material/DarkMode";
-import ExpandLessOutlinedIcon from '@mui/icons-material/ExpandLessOutlined';
 import ExpandMoreOutlinedIcon from '@mui/icons-material/ExpandMoreOutlined';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import GradingIcon from '@mui/icons-material/Grading';
@@ -18,11 +16,9 @@ import SchoolOutlinedIcon from '@mui/icons-material/SchoolOutlined';
 import WorkHistoryIcon from '@mui/icons-material/WorkHistory';
 
 export const ArrowCircleRight = ArrowCircleRightIcon;
-export const ArrowDropDown = ArrowDropDownIcon;
 export const CalendarMonth = CalendarMonthIcon;
 export const Code = CodeIcon;
 export const DarkMode = DarkModeIcon;
-export const ExpandLessOutlined = ExpandLessOutlinedIcon;
 export const ExpandMoreOutlined = ExpandMoreOutlinedIcon;
 export const GitHub = GitHubIcon;
 export const Grading = GradingIcon;
