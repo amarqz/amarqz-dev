@@ -1,5 +1,4 @@
-import Image from "next/image";
-import type { Metadata, ResolvingMetadata } from "next";
+import type { Metadata } from "next";
 import { getDictionary } from "./dictionaries";
 import Section from "@/components/Section";
 import Footer from "@/components/Footer";
@@ -8,10 +7,7 @@ type Props = {
   params: Promise<{ lang: string }>,
 };
 
-export async function generateMetadata(props: Props, parent: ResolvingMetadata): Promise<Metadata> {
-  const params = await props.params;
-  const dict = await getDictionary(params.lang);
-
+export async function generateMetadata(): Promise<Metadata> {
   return {
     title: `Portfolio | amarqz.dev`
   }

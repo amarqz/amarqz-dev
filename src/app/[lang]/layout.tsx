@@ -1,4 +1,4 @@
-import type { Metadata, ResolvingMetadata } from "next";
+import type { Metadata } from "next";
 import "../globals.css";
 import { getDictionary } from "./dictionaries";
 import TopBar from "@/components/TopBar";
@@ -11,7 +11,7 @@ export async function generateStaticParams() {
   return [{lang: 'es'}, {lang: 'en'}];
 };
 
-export async function generateMetadata(props: Props, parent: ResolvingMetadata): Promise<Metadata> {
+export async function generateMetadata(props: Props): Promise<Metadata> {
   const params = await props.params;
   const dict = await getDictionary(params.lang);
 
@@ -43,7 +43,6 @@ export default async function RootLayout(
     children
   } = props;
 
-  const dict = await getDictionary(params.lang);
   return (
     <html lang={ params.lang }>
       <body

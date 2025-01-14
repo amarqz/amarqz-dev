@@ -8,8 +8,8 @@ export const defaultLocale = 'en';
 export function getLocale(request: NextRequest) {
     const acceptLang = request.headers.get("Accept-Language");
     if (!acceptLang) return defaultLocale;
-    let headers = { "accept-language": acceptLang };
-    let languages = new Negotiator({ headers }).languages(locales);
+    const headers = { "accept-language": acceptLang };
+    const languages = new Negotiator({ headers }).languages(locales);
 
     return match(languages, locales, defaultLocale);
 };
