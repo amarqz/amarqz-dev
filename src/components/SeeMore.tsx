@@ -1,6 +1,6 @@
 'use client';
 
-import { ExpandLessOutlined, ExpandMoreOutlined } from "@/icons";
+import { ExpandMoreOutlined } from "@/icons";
 import React, { useState } from "react";
 
 interface Props {

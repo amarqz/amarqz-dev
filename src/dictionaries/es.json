@@ -1,7 +1,9 @@
 {
     "controls": {
         "seeLess": "Ver menos",
-        "seeMore": "Ver más"
+        "seeMore": "Ver más",
+        "switchLang": "Switch to English",
+        "switchTo": "en"
     },
     "education": {
         "skills": "Tecnologías"
@@ -29,8 +31,8 @@
         "private": "Proyecto privado"
     },
     "section": {
-        "education": "Educación",
         "experience": "Experiencia",
+        "education": "Educación",
         "projects": "Proyectos"
     }
 }

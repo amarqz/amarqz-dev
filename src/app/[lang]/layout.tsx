@@ -49,7 +49,7 @@ export default async function RootLayout(
       <body
         className={`antialiased`}
       >
-        <TopBar />
+        <TopBar locale={ params.lang }/>
         <div className="h-8 z-20 top-16 sticky bg-background"></div>
         {children}
       </body>

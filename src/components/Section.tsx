@@ -15,6 +15,7 @@ const Section = async ({ title, section, locale }: Props) => {
 
   return (
     <div className="rounded-3xl bg-neutral h-auto transition-all duration-300 interpolate">
+      <a id={ section } className="-top-[100px] relative block"></a>
       <h1 className="section top-24 bottom-8 sticky z-10 bg-background py-6 px-6 sm:px-8 rounded-b-3xl">
         {title}
       </h1>
