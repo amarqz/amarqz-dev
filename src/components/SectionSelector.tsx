@@ -7,11 +7,17 @@ interface Props {
   dict: any;
 }
 
+const sectionIcon: { [section: string]: React.JSX.Element } = {
+  education: <School />,
+  experience: <Code />,
+  projects: <WorkHistory />,
+};
+
 const SectionSelector = ({ dict }: Props) => {
   const [activeSection, setActiveSection] = useState("experience");
   const [isMobile, setIsMobile] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
-  const sections: {[section: string]: HTMLAnchorElement | null} = {};
+  const sections: { [section: string]: HTMLAnchorElement | null } = {};
   const indicatorRef = useRef(null);
 
   useEffect(() => {
@@ -20,8 +26,12 @@ const SectionSelector = ({ dict }: Props) => {
       const rect = activeRef.getBoundingClientRect();
       if (indicatorRef.current) {
         (indicatorRef.current as HTMLDivElement).style.left = `${rect.left}px`;
-        (indicatorRef.current as HTMLDivElement).style.width = `${rect.width}px`;
-        (indicatorRef.current as HTMLDivElement).style.height = `${rect.height}px`;
+        (
+          indicatorRef.current as HTMLDivElement
+        ).style.width = `${rect.width}px`;
+        (
+          indicatorRef.current as HTMLDivElement
+        ).style.height = `${rect.height}px`;
       }
     }
 
@@ -37,7 +47,7 @@ const SectionSelector = ({ dict }: Props) => {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  }, [isMobile, sections.experience]);
 
   const handleSectionChange = (section: any) => {
     setActiveSection(section);
@@ -48,8 +58,12 @@ const SectionSelector = ({ dict }: Props) => {
       const rect = activeRef.getBoundingClientRect();
       if (indicatorRef.current) {
         (indicatorRef.current as HTMLDivElement).style.left = `${rect.left}px`;
-        (indicatorRef.current as HTMLDivElement).style.width = `${rect.width}px`;
-        (indicatorRef.current as HTMLDivElement).style.height = `${rect.height}px`;
+        (
+          indicatorRef.current as HTMLDivElement
+        ).style.width = `${rect.width}px`;
+        (
+          indicatorRef.current as HTMLDivElement
+        ).style.height = `${rect.height}px`;
       }
     }
   };
@@ -60,10 +74,10 @@ const SectionSelector = ({ dict }: Props) => {
         <div className="flex gap-1">
           <div className="relative">
             <button
-              className="bg-subNeutral py-2 px-4 rounded-2xl"
+              className="bg-subNeutral py-2 px-4 rounded-2xl min-w-48"
               onClick={() => setShowMenu(!showMenu)}
             >
-              {dict.section[activeSection]}{" "}
+              { sectionIcon[activeSection] }    {dict.section[activeSection]}{" "}
               <ExpandMoreOutlined
                 className={`transition duration-200 ease-in-out ${
                   showMenu ? "rotate-180" : ""
@@ -80,7 +94,7 @@ const SectionSelector = ({ dict }: Props) => {
                         onClick={() => handleSectionChange(section)}
                         className="block py-2 px-4 rounded-lg hover:bg-neutral"
                       >
-                        {String(translation)}
+                        {sectionIcon[section]} {String(translation)}
                       </a>
                     </li>
                   )
@@ -90,22 +104,24 @@ const SectionSelector = ({ dict }: Props) => {
           </div>
         </div>
       ) : (
-        <div className="flex gap-4 max-h-fit">
+        <div className="flex gap-2 max-h-fit">
           {Object.entries(dict.section).map(
             ([section, translation], i: number) => (
               <a
                 href={`#${section}`}
                 key={i}
-                ref={ (ref) => {sections[section] = ref} }
+                ref={(ref) => {
+                  sections[section] = ref;
+                }}
                 className="flex gap-1 cursor-pointer z-10 px-4 py-2"
                 onClick={() => handleSectionChange(section)}
               >
-                {String(translation)}
+                {sectionIcon[section]} {String(translation)}
               </a>
             )
           )}
           <div
-            ref={ indicatorRef }
+            ref={indicatorRef}
             className="transition-all absolute bg-subNeutral px-4 rounded-xl z-1"
           />
         </div>
