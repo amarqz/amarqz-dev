@@ -5,7 +5,7 @@ import React, { useState } from "react";
 
 interface Props {
   dict: any,
-  setState: Function
+  setState: () => void
 }
 
 const SeeMore = ({ dict, setState }: Props) => {
