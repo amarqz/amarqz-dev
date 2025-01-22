@@ -27,7 +27,7 @@ const TopBar = async ( { locale } : Props) => {
         <Link target="_blank" href={"https://linkedin.com/in/antoniomarquezpicon"} className="hidden sm:block hover:bg-onHover p-1 rounded-md transition-all"><LinkedIn /></Link>
         <Link target="_blank" href={"https://www.credly.com/users/antonio-marquez-picon"} className="hidden sm:block hover:bg-onHover p-1 rounded-md transition-all"><Grading /></Link>
         <span className="hidden sm:block bg-secondary w-0.5 rounded"></span>
-        <DarkModeButton />
+        <DarkModeButton text={ dict.controls.switchTheme } />
         <div className="group relative">
           <Link href={`/${ dict.controls.switchTo }`}><div className="hover:bg-onHover p-1 rounded-md transition-all"><Image src={`/image/${locale}.svg`} width={"1300"} height={"650"} alt={'Spanish flag'} className='rounded-lg h-6 w-6 min-w-6'></Image></div></Link>
           <span className="pointer-events-none z-10 absolute w-max -bottom-9 right-10 transform translate-x-10 opacity-0 transition-opacity group-hover:opacity-100 bg-foreground text-background px-2 py-1 rounded-md">{ dict.controls.switchLang }</span>
