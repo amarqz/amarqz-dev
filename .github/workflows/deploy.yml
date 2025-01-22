@@ -48,5 +48,5 @@ jobs:
           docker stop amarqz_dev || true
           docker rm amarqz_dev || true
 
-          docker run -d -p 3000:3000 --name amarqz_dev --network external --restart unless-stopped amarqz-dev:latest
+          docker run -d --name amarqz_dev --network external --restart unless-stopped amarqz-dev:latest
           docker image prune -f
