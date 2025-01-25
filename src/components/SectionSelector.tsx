@@ -74,7 +74,7 @@ const SectionSelector = ({ dict }: Props) => {
         <div className="flex gap-1">
           <div className="relative">
             <button
-              className="bg-subNeutral py-2 px-4 rounded-2xl min-w-48"
+              className="flex bg-subNeutral p-2 rounded-2xl min-w-44 justify-center gap-1"
               onClick={() => setShowMenu(!showMenu)}
             >
               { sectionIcon[activeSection] }    {dict.section[activeSection]}{" "}
@@ -92,7 +92,7 @@ const SectionSelector = ({ dict }: Props) => {
                       <a
                         href={`#${section}`}
                         onClick={() => handleSectionChange(section)}
-                        className="block py-2 px-4 rounded-lg hover:bg-neutral"
+                        className="py-2 pl-3 rounded-lg hover:bg-neutral flex gap-1"
                       >
                         {sectionIcon[section]} {String(translation)}
                       </a>
