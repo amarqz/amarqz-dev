@@ -6,7 +6,7 @@
         "country": "IT",
         "date": "Sept. 2021 - May 2023",
         "score": "Final score: 110/110",
-        "thesis": "Lorem ipsum",
+        "thesis": "TBA",
         "link": "https://www.polimi.it/en/education/laurea-magistrale-programmes/programme-detail/automation-and-control-engineering"
     },
     "MSC1": {
@@ -16,7 +16,7 @@
         "country": "ES",
         "date": "Sept. 2020 - May 2023",
         "score": "Final score: 9.07/10",
-        "thesis": "Lorem ipsum",
+        "thesis": "TBA",
         "link": "https://www.upm.es/Estudiantes/Estudios_Titulaciones/Estudios_Master/Programas?id=5.11&fmt=detail"
     },
     "BSC": {
@@ -26,7 +26,7 @@
         "country": "ES",
         "date": "Oct. 2016 - June 2020",
         "score": "Final score: 8.45/10",
-        "thesis": "Lorem ipsum",
+        "thesis": "TBA",
         "link": "https://www.uma.es/grado-en-ingenieria-en-tecnologias-industriales"
     },
     "Scrum" : {
