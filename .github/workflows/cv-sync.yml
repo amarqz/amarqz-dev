@@ -4,6 +4,8 @@ on:
   push:
     paths:
       - "src/docs/**"
+    branches:
+      - 'main'
 
 jobs:
   sync:
