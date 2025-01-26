@@ -16,12 +16,12 @@ const TopBar = async ( { locale } : Props) => {
   return (
     <div className="h-16 flex justify-between z-30 top-0 bg-neutral text-foreground px-4 sm:px-10 py-4 shadow-lg sticky w-full items-center select-none">
       <SectionSelector dict={ dict } />
-      <div className="flex items-center gap-2">
+      <a className="flex items-center gap-2" href="#top">
         <Image src={'/image/logo.png'} width={420} height={420} alt="amarqz.dev logo" className="h-10 w-auto rounded-md" />
         <div className="hidden md:block basis-1/5 sm:basis-1/2 text-center text-2xl font-bold select-none">
           amarqz.dev
         </div>
-      </div>
+      </a>
       <div className="basis-2/5 sm:basis-1/4 text-center flex justify-end gap-x-4">
         <Link target="_blank" href={"https://github.com/amarqz"} className="hidden hover:bg-onHover sm:block p-1 rounded-md transition-all"><GitHub /></Link>
         <Link target="_blank" href={"https://linkedin.com/in/antoniomarquezpicon"} className="hidden sm:block hover:bg-onHover p-1 rounded-md transition-all"><LinkedIn /></Link>
