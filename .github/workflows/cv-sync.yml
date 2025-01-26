@@ -1,0 +1,45 @@
+name: Sync JSON data to PDF CV private repository
+
+on:
+  push:
+    paths:
+      - "src/docs/**"
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Public Repo
+        uses: actions/checkout@v3
+
+      - name: Configure Git
+        run: |
+          git config --global user.name "GitHub Action"
+          git config --global user.email "action@github.com"
+
+      - name: Sync Files
+        run: |
+          # Crea una carpeta temporal para el nuevo repositorio
+          mkdir private-repo
+          cd private-repo
+
+          # Inicializa un repositorio Git temporal
+          git init
+          git remote add private https://amarqz:${{ secrets.PRIVATE_REPO_PAT }}@github.com/amarqz/amarqz-cv.git
+          git fetch private main
+          git checkout main || git checkout -b main
+
+          # Copia los archivos desde src/docs a la carpeta docs/ del privado
+          mkdir -p docs
+          cp -R ../src/docs/* docs/
+
+          # Prepara los cambios para commit
+          git add docs
+          git status
+
+          # Realiza el commit solo si hay cambios
+          git diff-index --quiet HEAD || git commit -m "Sync updated docs from public repo"
+
+          # Envía los cambios al repositorio privado
+          git push private main
