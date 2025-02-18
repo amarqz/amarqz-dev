@@ -4,6 +4,7 @@
         "title": "MSc. in Automation and Control Engineering",
         "where": "Politecnico di Milano (PoliMi)",
         "country": "IT",
+        "at": "PoliMi -- Milano, IT",
         "date": "Sept. 2021 - May 2023",
         "score": "Final score: 110/110",
         "thesis": "TBA",
@@ -14,9 +15,10 @@
         "title": "MSc. in Industrial Engineering",
         "where": "Universidad Politécnica de Madrid (UPM)",
         "country": "ES",
+        "at": "UPM -- Madrid, ES",
         "date": "Sept. 2020 - May 2023",
         "score": "Final score: 9.07/10",
-        "thesis": "TBA",
+        "thesis": "Shared thesis with PoliMi",
         "link": "https://www.upm.es/Estudiantes/Estudios_Titulaciones/Estudios_Master/Programas?id=5.11&fmt=detail"
     },
     "BSC": {
@@ -24,6 +26,7 @@
         "title": "BSc. in Industrial Technologies Engineering",
         "where": "Universidad de Málaga (UMA)",
         "country": "ES",
+        "at": "UMA -- Málaga, ES",
         "date": "Oct. 2016 - June 2020",
         "score": "Final score: 8.45/10",
         "thesis": "TBA",

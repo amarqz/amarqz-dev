@@ -4,9 +4,10 @@
         "title": "Máster en Ingeniería de la Automatización",
         "where": "Politecnico di Milano",
         "country": "IT",
+        "at": "PoliMi -- Milano, IT",
         "date": "Sept. 2021 - Mayo 2023",
         "score": "Nota final: 110/110",
-        "thesis": "Por redactar",
+        "thesis": "Data-driven modelling and control of flue gas acid abatement processes in waste-to-energy plants",
         "link": "https://www.polimi.it/en/education/laurea-magistrale-programmes/programme-detail/automation-and-control-engineering"
     },
     "MSC1": {
@@ -14,9 +15,10 @@
         "title": "Máster en Ingeniería Industrial",
         "where": "Universidad Politécnica de Madrid",
         "country": "ES",
+        "at": "UPM -- Madrid, ES",
         "date": "Sept. 2020 - Mayo 2023",
         "score": "Nota final: 9.07/10",
-        "thesis": "Por redactar",
+        "thesis": "TFM compartido con PoliMi",
         "link": "https://www.upm.es/Estudiantes/Estudios_Titulaciones/Estudios_Master/Programas?id=5.11&fmt=detail"
     },
     "BSC": {
@@ -24,9 +26,10 @@
         "title": "Grado en Ingeniería en Tecnologías Industriales",
         "where": "Universidad de Málaga",
         "country": "ES",
+        "at": "UMA -- Málaga, ES",
         "date": "Oct. 2016 - Jun. 2020",
         "score": "Nota final: 8.45/10",
-        "thesis": "Por redactar",
+        "thesis": "",
         "link": "https://www.uma.es/grado-en-ingenieria-en-tecnologias-industriales"
     },
     "Scrum" : {
