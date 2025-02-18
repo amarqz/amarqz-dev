@@ -14,14 +14,18 @@
               "dates": "Dic. 2023 - act.",
               "description": [
                 "Tareas de integración de datos. Desarrollo y mantenimiento de interfaces de carga y extracción de datos.", 
-                "Desarrollo de cuadros de mando en PowerBI para la gestión eficaz de proyectos."],
-              "skills": ["Python", "Oracle SQL", "PowerBI", "Shell scripting"]
+                "Desarrollo de cuadros de mando en PowerBI para la gestión eficaz de proyectos.",
+                "Tareas de migración del sistema on-premise a Google Cloud."],
+              "skills": ["Python", "Oracle SQL", "PowerBI", "Shell scripting", "GCP"]
             },
             { 
               "role": "Desarrollador Java",
               "dates": "Oct. 2024 - act.",
-              "description": ["Tareas de desarrollo y mantenimiento de APIs."],
-              "skills": ["Java", "Shell scripting", "SAS", "Teradata SQL", "Oracle SQL"]
+              "description": [
+                "Tareas de desarrollo y mantenimiento de APIs.",
+                "Tareas de migración a nuevas versiones de Java.",
+                "Tareas de migración del sistema on-premise a Google Cloud."],
+              "skills": ["Java", "Shell scripting", "SAS", "Teradata SQL", "Oracle SQL", "GCP"]
             }
         ]
     }
