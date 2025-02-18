@@ -14,14 +14,18 @@
               "dates": "Dec. 2023 - curr.",
               "description": [
                 "Data integration tasks. Development and maintenance of data load/extraction interfaces.", 
-                "PowerBI dashboard development tasks for improving the project management efficiency."],
-              "skills": ["Python", "Oracle SQL", "PowerBI", "Shell scripting"]
+                "PowerBI dashboard development tasks for improving the project management efficiency.",
+                "Migration tasks to move the on-premise system to Google Cloud's infrastructures."],
+              "skills": ["Python", "Oracle SQL", "PowerBI", "Shell scripting", "GCP"]
             },
             { 
               "role": "Java Developer",
               "dates": "Oct. 2024 - curr.",
-              "description": ["API development and maintenance tasks."],
-              "skills": ["Java", "Shell scripting", "SAS", "Teradata SQL", "Oracle SQL"]
+              "description": [
+                "API development and maintenance tasks.",
+                "Upgrading tasks to update the codebase to a newer Java version.",
+                "Migration tasks to move the on-premise system to Google Cloud's infrastructures."],
+              "skills": ["Java", "Shell scripting", "SAS", "Teradata SQL", "Oracle SQL", "GCP"]
             }
         ]
     }
