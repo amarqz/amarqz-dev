@@ -23,10 +23,10 @@
               "role": "Desarrollador Java",
               "dates": "Oct. 2024 - act.",
               "description": [
-                "Tareas de desarrollo y mantenimiento de APIs.",
+                "Tareas de desarrollo y mantenimiento de APIs y microservicios.",
                 "Tareas de migración a nuevas versiones de Java.",
                 "Tareas de migración del sistema on-premise a Google Cloud."],
-              "skills": ["Java", "Shell scripting", "SAS", "Teradata SQL", "Oracle SQL", "GCP"]
+              "skills": ["Java", "SpringBoot", "Shell scripting", "SAS", "Teradata SQL", "Oracle SQL", "GCP"]
             }
         ]
     }
