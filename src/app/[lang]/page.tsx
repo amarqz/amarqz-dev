@@ -7,6 +7,7 @@ import { OpenInNew } from "@/icons";
 import TopBar from "@/components/TopBar";
 import HeroTyping from "@/components/HeroTyping";
 import TimelineScroller from "@/components/TimelineScroller";
+import RevealOnScroll from "@/components/RevealOnScroll";
 import type {
   EducationItem,
   ExperienceCompany,
@@ -52,6 +53,7 @@ export default async function Home(props: Props) {
 
   return (
     <main className="site-frame">
+      <RevealOnScroll selector="[data-reveal-node]" />
       <div className="grid-bg" />
       <div className="spotlight one" />
       <div className="spotlight two" />
@@ -68,7 +70,7 @@ export default async function Home(props: Props) {
         }}
       />
 
-      <section id="about" className="shell hero-v2">
+      <section id="about" className="shell hero">
         <div className="hero-copy fade-up delay-1 hero-full">
           <HeroTyping prefix={dict.hero.typingPrefix} words={dict.hero.typingWords} />
           <p className="mono eyebrow">{dict.hero.introKicker}</p>
@@ -95,6 +97,7 @@ export default async function Home(props: Props) {
                 key={`${company.company}-${index}`}
                 className="company-track"
                 data-company-track
+                data-reveal-node
                 data-logo-src={hasImage ? imageSrc : ""}
                 data-logo-alt={company.image?.alt || `${company.company} logo`}
                 data-logo-fallback={company.company.slice(0, 2).toUpperCase()}
@@ -113,7 +116,7 @@ export default async function Home(props: Props) {
                     <article
                       key={`${company.company}-${project.role}-${projectIndex}`}
                       className="project-node"
-                      data-project-node
+                      data-reveal-node
                       style={{ "--reveal-delay": `${index * 140 + projectIndex * 90}ms` } as CSSProperties}
                     >
                       <div className="checkpoint-col">
@@ -126,7 +129,7 @@ export default async function Home(props: Props) {
                             <li key={`${project.role}-desc-${itemIndex}`}>{item}</li>
                           ))}
                         </ul>
-                        <p className="skills-line-v2">
+                        <p className="skills-line">
                           <span className="mono">{dict.education.skills}:</span> {project.skills.join(" · ")}
                         </p>
                       </div>
@@ -148,8 +151,14 @@ export default async function Home(props: Props) {
           {projects.map((project, index) => {
             const external = typeof project.url === "string" && project.url.trim().length > 0;
             return (
-              <article className="project-v2" role="listitem" key={`${project.name}-${index}`}>
-                <div className="project-v2-top">
+              <article
+                className="project-card"
+                role="listitem"
+                key={`${project.name}-${index}`}
+                data-reveal-node
+                style={{ "--reveal-delay": `${120 + index * 80}ms` } as CSSProperties}
+              >
+                <div className="project-card-top">
                   <h3>{project.name}</h3>
                   <span className="mono project-status" style={{ backgroundColor: project.statusType }}>
                     {project.status}
@@ -162,15 +171,15 @@ export default async function Home(props: Props) {
                   ))}
                 </ul>
 
-                <div className="project-tech-v2">
+                <div className="project-tech">
                   {Object.entries(project.technologies).map(([name, color], techIndex) => (
-                    <span key={`${project.name}-tech-${techIndex}`} className="mono tech-v2" style={{ backgroundColor: color }}>
+                    <span key={`${project.name}-tech-${techIndex}`} className="mono tech-pill" style={{ backgroundColor: color }}>
                       {name}
                     </span>
                   ))}
                 </div>
 
-                <div className="project-v2-foot">
+                <div className="project-card-foot">
                   <span className="mono">{dict.projects.builtWith}</span>
                   {external ? (
                     <Link href={project.url as string} target="_blank" className="chip" aria-label={dict.tooltip.newtab}>
@@ -191,9 +200,14 @@ export default async function Home(props: Props) {
           <h2>{dict.section.education}</h2>
         </div>
 
-        <div className="edu-grid-v2">
+        <div className="education-grid">
           {education.map((item, index) => (
-            <article key={`${item.title}-${index}`} className="edu-card-v2">
+            <article
+              key={`${item.title}-${index}`}
+              className="education-card"
+              data-reveal-node
+              style={{ "--reveal-delay": `${140 + index * 90}ms` } as CSSProperties}
+            >
               <div className="edu-card-top">
                 <span className="mono edu-prefix">{item.type}</span>
                 <span className="mono edu-date-tag">{item.date}</span>
@@ -209,14 +223,14 @@ export default async function Home(props: Props) {
               <div className="edu-main">
                 <h3>{item.title}</h3>
                 <p>{item.score}</p>
-                <p className="edu-thesis-v2">{item.thesis}</p>
+                <p className="education-thesis">{item.thesis}</p>
               </div>
             </article>
           ))}
         </div>
       </section>
 
-      <footer className="shell footer-v2 mono">
+      <footer className="shell footer mono">
         <p>{dict.footer.byline}</p>
         <p>
           {dict.footer.lastUpdated}: {formattedBuildDate}

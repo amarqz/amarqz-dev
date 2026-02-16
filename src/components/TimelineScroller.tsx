@@ -35,7 +35,6 @@ export default function TimelineScroller({ timelineId }: Props) {
 
     const update = () => {
       const tracks = Array.from(timeline.querySelectorAll<HTMLElement>("[data-company-track]"));
-      const nodes = Array.from(timeline.querySelectorAll<HTMLElement>("[data-project-node]"));
       if (tracks.length === 0) {
         rafRef.current = requestAnimationFrame(update);
         return;
@@ -63,20 +62,6 @@ export default function TimelineScroller({ timelineId }: Props) {
           break;
         }
       }
-
-      tracks.forEach((track) => {
-        const rect = track.getBoundingClientRect();
-        if (rect.top < window.innerHeight * 0.88) {
-          track.classList.add("in-view");
-        }
-      });
-
-      nodes.forEach((node) => {
-        const rect = node.getBoundingClientRect();
-        if (rect.top < window.innerHeight * 0.9) {
-          node.classList.add("in-view");
-        }
-      });
 
       if (!expandedTrack) {
         setState((prev) => (prev.expanded ? { ...prev, expanded: false } : prev));

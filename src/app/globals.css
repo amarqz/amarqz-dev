@@ -216,7 +216,7 @@ a {
   border-color: var(--accent);
 }
 
-.hero-v2 {
+.hero {
   padding-top: clamp(4.4rem, 10vw, 7.2rem);
   padding-bottom: clamp(2.2rem, 6vw, 4.8rem);
   display: block;
@@ -357,7 +357,9 @@ a {
   box-shadow: 0 0 0 7px color-mix(in oklab, var(--accent) 15%, transparent);
   z-index: 4;
   pointer-events: none;
-  transition: width 260ms ease, height 260ms ease, box-shadow 260ms ease;
+  transition: width 340ms cubic-bezier(0.22, 0.7, 0.2, 1),
+    height 340ms cubic-bezier(0.22, 0.7, 0.2, 1),
+    box-shadow 340ms cubic-bezier(0.22, 0.7, 0.2, 1);
   overflow: hidden;
   will-change: top, width, height;
 }
@@ -559,7 +561,7 @@ a {
 }
 
 .event-card ul,
-.project-v2 ul {
+.project-card ul {
   margin-top: 0.7rem;
   padding-left: 1rem;
   display: grid;
@@ -568,13 +570,13 @@ a {
   color: var(--muted);
 }
 
-.skills-line-v2 {
+.skills-line {
   margin-top: 0.7rem;
   line-height: 1.5;
   color: var(--muted);
 }
 
-.skills-line-v2 span {
+.skills-line span {
   color: var(--accent);
 }
 
@@ -584,7 +586,7 @@ a {
   gap: 0.8rem;
 }
 
-.project-v2 {
+.project-card {
   grid-column: span 12;
   border: 1px solid var(--line);
   border-radius: 0.92rem;
@@ -593,14 +595,26 @@ a {
   display: grid;
   gap: 0.8rem;
   transition: transform 240ms ease, border-color 240ms ease;
+  opacity: 0;
+  transform: translateY(28px) scale(0.985);
+  transition:
+    opacity 640ms cubic-bezier(0.2, 0.7, 0.2, 1),
+    transform 640ms cubic-bezier(0.2, 0.7, 0.2, 1),
+    border-color 240ms ease;
+  transition-delay: var(--reveal-delay, 0ms);
 }
 
-.project-v2:hover {
-  transform: translateY(-4px);
+.project-card.in-view {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.project-card:hover {
+  transform: translateY(-4px) scale(1.002);
   border-color: color-mix(in oklab, var(--accent) 52%, var(--line));
 }
 
-.project-v2-top {
+.project-card-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -614,33 +628,33 @@ a {
   border-radius: 999px;
 }
 
-.project-tech-v2 {
+.project-tech {
   display: flex;
   flex-wrap: wrap;
   gap: 0.38rem;
 }
 
-.tech-v2 {
+.tech-pill {
   font-size: 0.66rem;
   color: #f4ffff;
   border-radius: 0.48rem;
   padding: 0.28rem 0.52rem;
 }
 
-.project-v2-foot {
+.project-card-foot {
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: 0.76rem;
 }
 
-.edu-grid-v2 {
+.education-grid {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
   gap: 1rem;
 }
 
-.edu-card-v2 {
+.education-card {
   grid-column: span 12;
   padding: 1rem;
   border: 1px solid var(--line);
@@ -649,15 +663,28 @@ a {
   transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
   position: relative;
   overflow: hidden;
+  opacity: 0;
+  transform: translateY(30px) scale(0.985);
+  transition:
+    opacity 680ms cubic-bezier(0.2, 0.7, 0.2, 1),
+    transform 680ms cubic-bezier(0.2, 0.7, 0.2, 1),
+    border-color 220ms ease,
+    box-shadow 220ms ease;
+  transition-delay: var(--reveal-delay, 0ms);
 }
 
-.edu-card-v2:hover {
-  transform: translateY(-4px);
+.education-card.in-view {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.education-card:hover {
+  transform: translateY(-4px) scale(1.002);
   border-color: color-mix(in oklab, var(--accent) 52%, var(--line));
   box-shadow: 0 14px 42px color-mix(in oklab, var(--accent) 18%, transparent);
 }
 
-.edu-card-v2::before {
+.education-card::before {
   content: "";
   position: absolute;
   inset: 0 auto auto 0;
@@ -707,12 +734,12 @@ a {
   margin-bottom: 0.28rem;
 }
 
-.edu-thesis-v2 {
+.education-thesis {
   margin-top: 0.5rem;
   line-height: 1.5;
 }
 
-.footer-v2 {
+.footer {
   padding: 1.5rem 0 0.5rem;
   text-align: center;
   color: var(--muted);
@@ -752,11 +779,11 @@ a {
 }
 
 @media (min-width: 850px) {
-  .project-v2 {
+  .project-card {
     grid-column: span 6;
   }
 
-  .edu-card-v2 {
+  .education-card {
     grid-column: span 4;
   }
 }
