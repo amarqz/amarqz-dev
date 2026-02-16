@@ -1,36 +1,92 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# amarqz.dev Portfolio
 
-## Getting Started
+A bilingual portfolio SPA-style web application built with Next.js App Router, React, TypeScript and Tailwind CSS.
 
-First, run the development server:
+This repository is the source of truth for personal content (experience, education, projects) rendered from JSON documents and localized dictionaries.
+
+## Stack
+
+- Next.js 16 (App Router)
+- React 19
+- TypeScript 5
+- Tailwind CSS 4
+- MUI (icons + components)
+- Docker (standalone output image)
+
+## Project Goals
+
+- Keep portfolio content easy to maintain through JSON documents.
+- Support English and Spanish with route-based localization.
+- Render sections from a reusable, data-driven component model.
+- Prepare the codebase for an upcoming full UI redesign.
+
+## Application Structure
+
+- `src/app/[lang]/...`: localized routes and page/layout entry points.
+- `src/dictionaries/*.json`: UI text and metadata for each language.
+- `src/docs/*.json`: portfolio content by section and locale.
+- `src/docs/documentation.ts`: dynamic loader that resolves `type + locale`.
+- `src/components/*`: reusable section/subsection rendering components.
+- `src/proxy.ts`: locale redirect proxy.
+- `src/middleware/i18n.ts`: language negotiation (`Accept-Language`).
+
+## Data Model (Current)
+
+The current model is intentionally rigid and section-oriented:
+
+- Sections: `experience`, `education`, `projects`.
+- Each section has a JSON file per locale (`*-en.json`, `*-es.json`).
+- Each JSON object key is an item id and value shape is section-specific.
+
+This gives predictable rendering and simple editing, but it also constrains layout freedom. That tradeoff is acceptable for now and will be revisited in the redesign phase.
+
+## How to Edit Portfolio Content
+
+1. Update `src/docs/*-en.json` and `src/docs/*-es.json` with matching item ids and translated content.
+2. Update labels/tooltips/meta text in `src/dictionaries/en.json` and `src/dictionaries/es.json`.
+3. If you add a new section type, include:
+   - new docs files for each locale,
+   - loader entry in `src/docs/documentation.ts`,
+   - section mapping in `src/app/[lang]/page.tsx`,
+   - UI support in section components.
+
+## Development
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run locally:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Other scripts:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run lint
+npm run build
+npm run start
+```
 
-## Learn More
+## Docker
 
-To learn more about Next.js, take a look at the following resources:
+The project is configured for `output: "standalone"` and includes a multi-stage Dockerfile.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Build image:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+docker build -t amarqz-dev .
+```
 
-## Deploy on Vercel
+Run container:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+docker run --rm -p 3000:3000 amarqz-dev
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

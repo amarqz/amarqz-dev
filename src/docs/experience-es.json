@@ -1,4 +1,25 @@
 {
+	"tupl" : {
+		"company": "Tupl Inc.",
+		"location": "Málaga, Andalusia, Spain",
+		"image": {
+			"alt": "Logo de Tupl",
+			"height": 341,
+			"src": "/image/Tupl.jpeg",
+			"width": 367
+		},
+		"duration": "Actual",
+		"projects": [
+			{
+				"role": "Software Engineer",
+				"dates": "Sep. 2025 - act.",
+				"description": [
+					"Develop the product (yet to define)"
+				],
+				"skills": ["Python", "FastAPI", "Rust", "Kubernetes"]
+			}
+		]
+	},
     "VIEWNEXT": {
         "company": "VIEWNEXT",
         "location": "Málaga, Andalucía, España",
@@ -8,11 +29,11 @@
           "src": "/image/VIEWNEXT.png",
           "width": 150
         },
-        "duration": "Actual",
+        "duration": "1a 9m",
         "projects": [
             { 
               "role": "Desarrollador Python",
-              "dates": "Dic. 2023 - act.",
+              "dates": "Dic. 2023 - Sep. 2025",
               "description": [
                 "Tareas de integración de datos. Desarrollo y mantenimiento de interfaces de carga y extracción de datos.", 
                 "Desarrollo de cuadros de mando en PowerBI para la gestión eficaz de proyectos.",
@@ -21,7 +42,7 @@
             },
             { 
               "role": "Desarrollador Java",
-              "dates": "Oct. 2024 - act.",
+              "dates": "Oct. 2024 - Sep. 2025",
               "description": [
                 "Tareas de desarrollo y mantenimiento de APIs y microservicios.",
                 "Tareas de migración a nuevas versiones de Java.",

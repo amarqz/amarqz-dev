@@ -1,13 +1,28 @@
 {
     "controls": {
-        "seeLess": "See less",
-        "seeMore": "See more",
         "switchLang": "Ver en español",
-        "switchTheme": "Cambiar tema",
         "switchTo": "es"
     },
     "education": {
         "skills": "Main skills"
+    },
+    "hero": {
+        "typingPrefix": "I'm ",
+        "typingWords": [
+            "amarqz",
+            "Antonio Márquez"
+        ],
+        "introKicker": "SOFTWARE ENGINEER · FULL-STACK",
+        "lead": "I combine software engineering, architecture design, and product thinking to deliver useful and maintainable solutions.",
+        "nowLabel": "Now",
+        "nowValue": "Building product at Tupl Inc."
+    },
+    "projects": {
+        "builtWith": "Stack"
+    },
+    "footer": {
+        "byline": "Designed and built by amarqz.dev",
+        "lastUpdated": "Last updated"
     },
     "meta": {
         "description": "Full-stack developer amarqz's portfolio page",
@@ -17,6 +32,11 @@
             "Developer",
             "Analyst",
             "Python",
+            "Golang",
+            "Rust",
+            "FastAPI",
+            "Java",
+            "Nim",
             "JavaScript",
             "TypeScript",
             "Next.js",
@@ -29,6 +49,7 @@
         "private": "Private project"
     },
     "section": {
+        "about": "About",
         "experience": "Experience",
         "education": "Education",
         "projects": "Projects"
