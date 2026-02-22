@@ -550,7 +550,6 @@ a {
 }
 
 .event-company p,
-.edu-main p,
 .private-note {
   color: var(--muted);
 }
@@ -648,19 +647,31 @@ a {
   font-size: 0.76rem;
 }
 
-.education-grid {
+.education-layout {
   display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr);
   gap: 1rem;
+  align-items: start;
 }
 
-.education-card {
-  grid-column: span 12;
-  padding: 1rem;
+.education-layout-single {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.education-journey {
+  display: grid;
+  gap: 0.92rem;
+}
+
+.education-journey-card,
+.education-cert-card {
   border: 1px solid var(--line);
-  border-radius: 0.95rem;
-  background: var(--surface-solid);
-  transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+  border-radius: 1rem;
+  background: linear-gradient(
+    160deg,
+    color-mix(in oklab, var(--surface-solid) 92%, white),
+    color-mix(in oklab, var(--surface-solid) 96%, transparent)
+  );
   position: relative;
   overflow: hidden;
   opacity: 0;
@@ -673,42 +684,41 @@ a {
   transition-delay: var(--reveal-delay, 0ms);
 }
 
-.education-card.in-view {
+.education-journey-card.in-view,
+.education-cert-card.in-view {
   opacity: 1;
   transform: translateY(0) scale(1);
 }
 
-.education-card:hover {
+.education-journey-card:hover,
+.education-cert-card:hover {
   transform: translateY(-4px) scale(1.002);
-  border-color: color-mix(in oklab, var(--accent) 52%, var(--line));
-  box-shadow: 0 14px 42px color-mix(in oklab, var(--accent) 18%, transparent);
+  border-color: color-mix(in oklab, var(--accent) 56%, var(--line));
+  box-shadow: 0 14px 38px color-mix(in oklab, var(--accent) 15%, transparent);
 }
 
-.education-card::before {
-  content: "";
-  position: absolute;
-  inset: 0 auto auto 0;
-  width: 100%;
-  height: 3px;
-  background: linear-gradient(90deg, var(--accent), transparent 75%);
-  opacity: 0.65;
+.education-journey-card {
+  padding: 1rem 1rem 0.92rem;
+  display: grid;
+  gap: 0.58rem;
 }
 
-.edu-card-top {
+.education-journey-head,
+.education-cert-head {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 0.5rem;
+  gap: 0.6rem;
 }
 
-.edu-prefix {
+.education-type-pill {
   color: var(--accent);
-  font-size: 0.7rem;
+  font-size: 0.67rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
 
-.edu-date-tag {
+.education-date-tag {
   font-size: 0.68rem;
   color: var(--muted);
   background: color-mix(in oklab, var(--chip) 72%, transparent);
@@ -717,26 +727,56 @@ a {
   padding: 0.24rem 0.5rem;
 }
 
-.edu-institution-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 0.8rem;
-  margin-bottom: 0.55rem;
-}
-
-.edu-institution-row p {
+.education-where,
+.education-score {
   color: var(--muted);
   font-size: 0.92rem;
 }
 
-.edu-main h3 {
-  margin-bottom: 0.28rem;
+.education-score {
+  font-size: 0.81rem;
 }
 
 .education-thesis {
-  margin-top: 0.5rem;
-  line-height: 1.5;
+  margin-top: 0.18rem;
+  line-height: 1.48;
+  color: var(--muted);
+  border-left: 2px solid color-mix(in oklab, var(--accent) 34%, transparent);
+  padding-left: 0.72rem;
+}
+
+.education-card-foot {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.education-certifications {
+  border: 1px solid color-mix(in oklab, var(--line) 85%, transparent);
+  border-radius: 1rem;
+  background: color-mix(in oklab, var(--surface-solid) 88%, transparent);
+  padding: 0.82rem;
+}
+
+.education-cert-grid {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.education-cert-card {
+  padding: 0.82rem;
+  display: grid;
+  gap: 0.52rem;
+}
+
+.education-cert-card h3 {
+  font-size: 0.95rem;
+}
+
+.education-cert-foot {
+  margin-top: 0.08rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .footer {
@@ -782,10 +822,6 @@ a {
   .project-card {
     grid-column: span 6;
   }
-
-  .education-card {
-    grid-column: span 4;
-  }
 }
 
 @media (max-width: 1060px) {
@@ -819,7 +855,15 @@ a {
     padding-left: 0;
   }
 
-  .edu-institution-row {
+  .education-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .education-certifications {
+    padding: 0.68rem;
+  }
+
+  .education-cert-head {
     align-items: flex-start;
   }
 }

@@ -36,6 +36,20 @@ export default async function Home(props: Props) {
   const education = Object.values(
     (await getDocumentation("education", locale)) as Record<string, EducationItem>
   );
+  const isCertification = (item: EducationItem) => {
+    const fingerprint = `${item.type} ${item.title}`.toLowerCase();
+    return (
+      fingerprint.includes("certif") ||
+      fingerprint.includes("scrum") ||
+      fingerprint.includes("pcap")
+    );
+  };
+  const certificationItems = education.filter(isCertification);
+  const academicItems =
+    certificationItems.length === education.length
+      ? education
+      : education.filter((item) => !isCertification(item));
+
   const projects = Object.values(
     (await getDocumentation("projects", locale)) as Record<string, ProjectItem>
   );
@@ -200,33 +214,68 @@ export default async function Home(props: Props) {
           <h2>{dict.section.education}</h2>
         </div>
 
-        <div className="education-grid">
-          {education.map((item, index) => (
-            <article
-              key={`${item.title}-${index}`}
-              className="education-card"
-              data-reveal-node
-              style={{ "--reveal-delay": `${140 + index * 90}ms` } as CSSProperties}
-            >
-              <div className="edu-card-top">
-                <span className="mono edu-prefix">{item.type}</span>
-                <span className="mono edu-date-tag">{item.date}</span>
+        <div className={`education-layout ${certificationItems.length === 0 ? "education-layout-single" : ""}`}>
+          <div className="education-journey" role="list">
+            {academicItems.map((item, index) => {
+              const hasThesis = item.thesis.trim().length > 0 && !/^lorem ipsum$/i.test(item.thesis.trim());
+              return (
+                <article
+                  key={`${item.title}-${index}`}
+                  className="education-journey-card"
+                  role="listitem"
+                  data-reveal-node
+                  style={{ "--reveal-delay": `${140 + index * 85}ms` } as CSSProperties}
+                >
+                  <div className="education-journey-head">
+                    <span className="mono education-type-pill">{item.type}</span>
+                    <span className="mono education-date-tag">{item.date}</span>
+                  </div>
+                  <h3>{item.title}</h3>
+                  <p className="education-where">
+                    {item.where} · {item.country}
+                  </p>
+                  <p className="education-score">{item.score}</p>
+                  {hasThesis ? <p className="education-thesis">{item.thesis}</p> : null}
+                  <div className="education-card-foot">
+                    <Link href={item.link} target="_blank" className="chip" aria-label={dict.tooltip.newtab}>
+                      <OpenInNew fontSize="small" />
+                    </Link>
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+
+          {certificationItems.length > 0 ? (
+            <aside className="education-certifications">
+              <div className="education-cert-grid" role="list">
+                {certificationItems.map((item, index) => (
+                  <article
+                    key={`${item.title}-cert-${index}`}
+                    className="education-cert-card"
+                    role="listitem"
+                    data-reveal-node
+                    style={{ "--reveal-delay": `${220 + index * 90}ms` } as CSSProperties}
+                  >
+                    <div className="education-cert-head">
+                      <span className="mono education-type-pill">{item.type}</span>
+                      <span className="mono education-date-tag">{item.date}</span>
+                    </div>
+                    <h3>{item.title}</h3>
+                    <p className="education-where">
+                      {item.where} · {item.country}
+                    </p>
+                    <div className="education-cert-foot">
+                      <span className="mono education-score">{item.score}</span>
+                      <Link href={item.link} target="_blank" className="chip" aria-label={dict.tooltip.newtab}>
+                        <OpenInNew fontSize="small" />
+                      </Link>
+                    </div>
+                  </article>
+                ))}
               </div>
-              <div className="edu-institution-row">
-                <p>
-                  {item.where} · {item.country}
-                </p>
-                <Link href={item.link} target="_blank" className="chip" aria-label={dict.tooltip.newtab}>
-                  <OpenInNew fontSize="small" />
-                </Link>
-              </div>
-              <div className="edu-main">
-                <h3>{item.title}</h3>
-                <p>{item.score}</p>
-                <p className="education-thesis">{item.thesis}</p>
-              </div>
-            </article>
-          ))}
+            </aside>
+          ) : null}
         </div>
       </section>
 
