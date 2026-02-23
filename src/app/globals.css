@@ -222,6 +222,20 @@ a {
   border-color: var(--accent);
 }
 
+.theme-icon {
+  display: none;
+  line-height: 0;
+}
+
+:root:not([data-theme]) .theme-icon-light,
+:root[data-theme="dark"] .theme-icon-light {
+  display: inline-flex;
+}
+
+:root[data-theme="light"] .theme-icon-dark {
+  display: inline-flex;
+}
+
 .hero {
   padding-top: clamp(4.4rem, 10vw, 7.2rem);
   padding-bottom: clamp(2.2rem, 6vw, 4.8rem);

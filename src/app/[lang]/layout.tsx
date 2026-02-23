@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import "../globals.css";
 import { getDictionary } from "./dictionaries";
+import ThemeSync from "@/components/ThemeSync";
 
 type Props = {
   params: Promise<{ lang: string }>;
@@ -55,6 +56,7 @@ export default async function RootLayout(
             }
           })();`}
         </Script>
+        <ThemeSync />
         {children}
       </body>
     </html>

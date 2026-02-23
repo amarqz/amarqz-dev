@@ -1,27 +1,13 @@
 "use client";
 
-import { useState } from "react";
 import { DarkMode, LightMode } from "@/icons";
-
-type Theme = "light" | "dark";
-
-function readTheme(): Theme {
-  if (typeof document === "undefined") {
-    return "dark";
-  }
-
-  return document.documentElement.dataset.theme === "light" ? "light" : "dark";
-}
+import { applyTheme, readActiveTheme, type Theme } from "@/lib/theme";
 
 export default function ThemeToggle() {
-  const [theme, setTheme] = useState<Theme>("dark");
-
   const toggleTheme = () => {
-    const currentTheme = readTheme();
+    const currentTheme = readActiveTheme();
     const nextTheme: Theme = currentTheme === "dark" ? "light" : "dark";
-    document.documentElement.dataset.theme = nextTheme;
-    localStorage.setItem("theme", nextTheme);
-    setTheme(nextTheme);
+    applyTheme(nextTheme, true);
   };
 
   return (
@@ -32,7 +18,12 @@ export default function ThemeToggle() {
       aria-label="Toggle color theme"
       title="Toggle color theme"
     >
-      {theme === "dark" ? <LightMode fontSize="small" /> : <DarkMode fontSize="small" />}
+      <span className="theme-icon theme-icon-light" aria-hidden="true">
+        <LightMode fontSize="small" />
+      </span>
+      <span className="theme-icon theme-icon-dark" aria-hidden="true">
+        <DarkMode fontSize="small" />
+      </span>
     </button>
   );
 }
