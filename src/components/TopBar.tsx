@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import type { CSSProperties } from "react";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import ThemeToggle from "@/components/ThemeToggle";
 import { ExpandMoreOutlined, GitHub, Grading, LinkedIn } from "@/icons";
 
@@ -22,6 +22,8 @@ export default function TopBar({ locale, switchTo, switchLang, labels }: Props) 
   const [progress, setProgress] = useState(0);
   const [isScrolled, setIsScrolled] = useState(false);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
+  const mobileMenuRef = useRef<HTMLElement | null>(null);
+  const mobileMenuTriggerRef = useRef<HTMLButtonElement | null>(null);
 
   useEffect(() => {
     const onScroll = () => {
@@ -52,6 +54,23 @@ export default function TopBar({ locale, switchTo, switchLang, labels }: Props) 
       window.removeEventListener("resize", onScroll);
     };
   }, []);
+
+  useEffect(() => {
+    if (!showMobileMenu) return;
+
+    const closeOnOutsidePress = (event: PointerEvent) => {
+      const target = event.target as Node | null;
+      if (!target) return;
+      if (mobileMenuRef.current?.contains(target)) return;
+      if (mobileMenuTriggerRef.current?.contains(target)) return;
+      setShowMobileMenu(false);
+    };
+
+    document.addEventListener("pointerdown", closeOnOutsidePress);
+    return () => {
+      document.removeEventListener("pointerdown", closeOnOutsidePress);
+    };
+  }, [showMobileMenu]);
 
   const progressStyle = useMemo(
     () =>
@@ -89,7 +108,9 @@ export default function TopBar({ locale, switchTo, switchLang, labels }: Props) 
           <Link href={`/${switchTo}`} className="chip mono" aria-label={switchLang}>
             {locale.toUpperCase()}
           </Link>
+          <ThemeToggle />
           <button
+            ref={mobileMenuTriggerRef}
             type="button"
             className="chip dock-mobile-trigger"
             aria-label="Toggle section navigation"
@@ -100,11 +121,10 @@ export default function TopBar({ locale, switchTo, switchLang, labels }: Props) 
               className={showMobileMenu ? "dock-menu-open" : ""}
             />
           </button>
-          <ThemeToggle />
         </div>
       </div>
       {showMobileMenu && (
-        <nav className="dock-mobile-menu mono" aria-label="Mobile section navigation">
+        <nav ref={mobileMenuRef} className="dock-mobile-menu mono" aria-label="Mobile section navigation">
           {sectionIds.map((id) => (
             <a
               key={`mobile-${id}`}
