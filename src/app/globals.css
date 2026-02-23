@@ -4,6 +4,7 @@
 :root {
   --font-sans: "Space Grotesk", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
+  --anchor-offset: 6rem;
 
   --bg: #f3fbfb;
   --surface: #ffffffdd;
@@ -73,6 +74,10 @@ a {
   position: relative;
   overflow-x: clip;
   padding-bottom: 2.5rem;
+}
+
+section[id] {
+  scroll-margin-top: var(--anchor-offset);
 }
 
 .grid-bg {
@@ -582,23 +587,21 @@ a {
 .event-card ul,
 .project-card ul {
   margin-top: 0.7rem;
-  padding-left: 1rem;
+  list-style: none;
+  padding-left: 0;
   display: grid;
   gap: 0.45rem;
   line-height: 1.5;
   color: var(--muted);
 }
 
-.project-card ul {
-  list-style: none;
-  padding-left: 0;
-}
-
+.event-card ul li,
 .project-card ul li {
   position: relative;
   padding-left: 0.92rem;
 }
 
+.event-card ul li::before,
 .project-card ul li::before {
   content: "";
   position: absolute;
@@ -984,6 +987,10 @@ a {
 }
 
 @media (max-width: 840px) {
+  :root {
+    --anchor-offset: 6.4rem;
+  }
+
   .dock-actions .chip:nth-child(-n + 3) {
     display: none;
   }
