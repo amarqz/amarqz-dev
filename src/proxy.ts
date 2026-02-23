@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { NextRequest } from 'next/server';
 import { locales, getLocale } from './middleware/i18n';
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
     const { pathname } = request.nextUrl;
     const pathnameIsMissingLocale = locales.every(
         (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`

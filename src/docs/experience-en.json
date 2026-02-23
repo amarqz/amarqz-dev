@@ -1,17 +1,39 @@
 {
+	"tupl" : {
+		"company": "Tupl Inc.",
+		"location": "Málaga, Andalusia, Spain",
+		"image": {
+			"alt": "Tupl logo",
+			"height": 341,
+			"src": "/image/Tupl.jpeg",
+			"width": 367
+		},
+		"duration": "Current",
+		"projects": [
+			{
+				"role": "Software Engineer",
+				"dates": "Sep. 2025 - curr.",
+				"description": [
+					"Develop the product (yet to define)"
+				],
+				"skills": ["Python", "FastAPI", "Rust", "Kubernetes"]
+			}
+		]
+	},
     "VIEWNEXT": {
         "company": "VIEWNEXT",
+        "location": "Málaga, Andalusia, Spain",
         "image": {
           "alt": "VIEWNEXT logo",
           "height": 150,
           "src": "/image/VIEWNEXT.png",
           "width": 150
         },
-        "duration": "Current",
+        "duration": "1y 9mo",
         "projects": [
             { 
               "role": "Python Developer",
-              "dates": "Dec. 2023 - curr.",
+              "dates": "Dec. 2023 - Sep. 2025",
               "description": [
                 "Data integration tasks. Development and maintenance of data load/extraction interfaces.", 
                 "PowerBI dashboard development tasks for improving the project management efficiency.",
@@ -20,12 +42,12 @@
             },
             { 
               "role": "Java Developer",
-              "dates": "Oct. 2024 - curr.",
+              "dates": "Oct. 2024 - Sep. 2025",
               "description": [
-                "API development and maintenance tasks.",
+                "API and microservices development and maintenance tasks.",
                 "Upgrading tasks to update the codebase to a newer Java version.",
                 "Migration tasks to move the on-premise system to Google Cloud's infrastructures."],
-              "skills": ["Java", "Shell scripting", "SAS", "Teradata SQL", "Oracle SQL", "GCP"]
+              "skills": ["Java", "SpringBoot", "Shell scripting", "SAS", "Teradata SQL", "Oracle SQL", "GCP"]
             }
         ]
     }

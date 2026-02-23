@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "../globals.css";
 import { getDictionary } from "./dictionaries";
-import TopBar from "@/components/TopBar";
+import ThemeSync from "@/components/ThemeSync";
 
 type Props = {
-  params: Promise<{ lang: string }>,
+  params: Promise<{ lang: string }>;
 };
 
 export async function generateStaticParams() {
-  return [{lang: 'es'}, {lang: 'en'}];
-};
+  return [{ lang: "es" }, { lang: "en" }];
+}
 
 export async function generateMetadata(props: Props): Promise<Metadata> {
   const params = await props.params;
@@ -17,8 +18,8 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
 
   return {
     title: {
-      template: '%s | amarqz.dev',
-      default: 'amarqz.dev',
+      template: "%s | amarqz.dev",
+      default: "amarqz.dev",
     },
     description: dict.meta.description,
     keywords: dict.meta.keywords,
@@ -26,10 +27,10 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
       index: true,
       follow: true,
       nocache: true,
-      noimageindex: true
-    }
-  }
-};
+      noimageindex: true,
+    },
+  };
+}
 
 export default async function RootLayout(
   props: Readonly<{
@@ -38,19 +39,24 @@ export default async function RootLayout(
   }>
 ) {
   const params = await props.params;
-
-  const {
-    children
-  } = props;
+  const { children } = props;
 
   return (
-    <html lang={ params.lang }>
-      <body
-        className={`antialiased`}
-      >
-        <div id="top"></div>
-        <TopBar locale={ params.lang }/>
-        <div className="h-8 z-20 top-16 sticky bg-background"></div>
+    <html lang={params.lang} suppressHydrationWarning>
+      <body>
+        <Script id="theme-init" strategy="beforeInteractive">
+          {`(function(){
+            try {
+              var stored = localStorage.getItem('theme');
+              var prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+              var theme = stored || (prefersLight ? 'light' : 'dark');
+              document.documentElement.dataset.theme = theme;
+            } catch (e) {
+              document.documentElement.dataset.theme = 'dark';
+            }
+          })();`}
+        </Script>
+        <ThemeSync />
         {children}
       </body>
     </html>
