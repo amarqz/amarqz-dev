@@ -18,6 +18,54 @@ type Props = {
   params: Promise<{ lang: string }>;
 };
 
+const expandHexColor = (value: string) => {
+  const hex = value.trim().toLowerCase();
+  if (!hex.startsWith("#")) {
+    return null;
+  }
+
+  if (hex.length === 4 || hex.length === 5) {
+    const chars = hex.slice(1).split("");
+    const expanded = chars.map((char) => char + char).join("");
+    return `#${expanded.slice(0, 6)}`;
+  }
+
+  if (hex.length === 7 || hex.length === 9) {
+    return `#${hex.slice(1, 7)}`;
+  }
+
+  return null;
+};
+
+const resolveBadgeColor = (value: string) => {
+  const normalized = value.trim().toLowerCase();
+  if (normalized === "var(--next)") {
+    return "var(--next)";
+  }
+
+  return value;
+};
+
+const getBadgeTextColor = (badgeColor: string) => {
+  const normalizedColor = resolveBadgeColor(badgeColor);
+  if (normalizedColor.trim().toLowerCase() === "var(--next)") {
+    return "var(--next-on)";
+  }
+
+  const hex = expandHexColor(normalizedColor);
+
+  if (!hex) {
+    return "#ecf9f9";
+  }
+
+  const r = Number.parseInt(hex.slice(1, 3), 16);
+  const g = Number.parseInt(hex.slice(3, 5), 16);
+  const b = Number.parseInt(hex.slice(5, 7), 16);
+
+  const luminance = (0.2126 * r + 0.7152 * g + 0.0722 * b) / 255;
+  return luminance > 0.6 ? "#0b1d22" : "#ecf9f9";
+};
+
 export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Portfolio",
@@ -185,23 +233,28 @@ export default async function Home(props: Props) {
                   ))}
                 </ul>
 
-                <div className="project-tech">
-                  {Object.entries(project.technologies).map(([name, color], techIndex) => (
-                    <span key={`${project.name}-tech-${techIndex}`} className="mono tech-pill" style={{ backgroundColor: color }}>
-                      {name}
-                    </span>
-                  ))}
-                </div>
-
                 <div className="project-card-foot">
-                  <span className="mono">{dict.projects.builtWith}</span>
-                  {external ? (
-                    <Link href={project.url as string} target="_blank" className="chip" aria-label={dict.tooltip.newtab}>
-                      <OpenInNew fontSize="small" />
-                    </Link>
-                  ) : (
-                    <span className="mono private-note">{dict.tooltip.private}</span>
-                  )}
+                  <div className="project-tech">
+                    <span className="mono project-tech-label">{dict.projects.builtWith}</span>
+                    {Object.entries(project.technologies).map(([name, color], techIndex) => (
+                      <span
+                        key={`${project.name}-tech-${techIndex}`}
+                        className="mono tech-pill"
+                        style={{ backgroundColor: color, color: getBadgeTextColor(color) }}
+                      >
+                        {name}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="project-card-action">
+                    {external ? (
+                      <Link href={project.url as string} target="_blank" className="chip" aria-label={dict.tooltip.newtab}>
+                        <OpenInNew fontSize="small" />
+                      </Link>
+                    ) : (
+                      <span className="mono private-note">{dict.tooltip.private}</span>
+                    )}
+                  </div>
                 </div>
               </article>
             );

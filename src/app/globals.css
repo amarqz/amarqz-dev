@@ -13,7 +13,10 @@
   --line: #0f766e33;
   --accent: #0f766e;
   --accent-strong: #0a9f96;
+  --next: #111111;
+  --next-on: #ecf9f9;
   --chip: #e4f6f4;
+  --project-foot-bg: color-mix(in oklab, var(--surface-solid) 88%, var(--chip) 12%);
   --shadow: 0 26px 80px #0a30380f;
 }
 
@@ -26,7 +29,10 @@
   --line: #27b8ad47;
   --accent: #25b2a8;
   --accent-strong: #2fd4c8;
+  --next: #ffffff;
+  --next-on: #0b1d22;
   --chip: #0d3338;
+  --project-foot-bg: color-mix(in oklab, var(--chip) 66%, black 18%);
   --shadow: 0 30px 90px #02070a8a;
 }
 
@@ -569,6 +575,27 @@ a {
   color: var(--muted);
 }
 
+.project-card ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.project-card ul li {
+  position: relative;
+  padding-left: 0.92rem;
+}
+
+.project-card ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.7em;
+  width: 0.44rem;
+  height: 1px;
+  border-radius: 1px;
+  background: color-mix(in oklab, var(--accent) 72%, transparent);
+}
+
 .skills-line {
   margin-top: 0.7rem;
   line-height: 1.5;
@@ -630,21 +657,58 @@ a {
 .project-tech {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.38rem;
+  column-gap: 0.38rem;
+  row-gap: 0.5rem;
+  align-items: center;
+}
+
+.project-tech-label {
+  font-size: 0.71rem;
+  color: var(--muted);
+  margin-right: 0.15rem;
+  flex-shrink: 0;
 }
 
 .tech-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   font-size: 0.66rem;
-  color: #f4ffff;
+  line-height: 1;
+  color: #ecf9f9;
   border-radius: 0.48rem;
   padding: 0.28rem 0.52rem;
+  min-height: 1.36rem;
+  white-space: nowrap;
 }
 
 .project-card-foot {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
   align-items: center;
+  gap: 0.85rem;
   font-size: 0.76rem;
+  margin: 0 -0.92rem -0.92rem;
+  padding: 0.72rem 0.92rem;
+  border-top: 1px solid var(--line);
+  border-radius: 0 0 0.92rem 0.92rem;
+  background: var(--project-foot-bg);
+}
+
+.project-card-foot .project-tech {
+  min-width: 0;
+  align-content: center;
+}
+
+.project-card-action {
+  justify-self: end;
+  align-self: center;
+  display: inline-flex;
+  align-items: center;
+}
+
+.project-card-action .private-note {
+  white-space: nowrap;
 }
 
 .education-layout {
