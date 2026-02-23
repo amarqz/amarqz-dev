@@ -3,7 +3,7 @@ import type { CSSProperties } from "react";
 import Link from "next/link";
 import { getDictionary } from "./dictionaries";
 import { getDocumentation } from "@/docs/documentation";
-import { OpenInNew } from "@/icons";
+import { GitHub, LinkedIn, OpenInNew } from "@/icons";
 import TopBar from "@/components/TopBar";
 import HeroTyping from "@/components/HeroTyping";
 import TimelineScroller from "@/components/TimelineScroller";
@@ -329,6 +329,35 @@ export default async function Home(props: Props) {
               </div>
             </aside>
           ) : null}
+        </div>
+      </section>
+
+      <section className="shell contact-section fade-up">
+        <h2 className="contact-title">{dict.contact.title}</h2>
+        <p className="contact-lead">{dict.contact.lead}</p>
+        <div className="contact-links">
+          <Link
+            href="https://github.com/amarqz"
+            target="_blank"
+            rel="noreferrer"
+            className="contact-link mono"
+            aria-label="GitHub profile"
+          >
+            <GitHub fontSize="small" />
+            <span>{dict.contact.github}</span>
+            <OpenInNew fontSize="inherit" />
+          </Link>
+          <Link
+            href="https://linkedin.com/in/antoniomarquezpicon"
+            target="_blank"
+            rel="noreferrer"
+            className="contact-link mono"
+            aria-label="LinkedIn profile"
+          >
+            <LinkedIn fontSize="small" />
+            <span>{dict.contact.linkedin}</span>
+            <OpenInNew fontSize="inherit" />
+          </Link>
         </div>
       </section>
 

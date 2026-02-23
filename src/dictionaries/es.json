@@ -20,6 +20,12 @@
     "projects": {
         "builtWith": "Stack"
     },
+    "contact": {
+        "title": "Contacto",
+        "lead": "Si te interesa colaborar o comentar un proyecto, no dudes en escribirme.",
+        "github": "GitHub",
+        "linkedin": "LinkedIn"
+    },
     "footer": {
         "byline": "Diseñado y construido por amarqz.dev",
         "lastUpdated": "Última actualización"
