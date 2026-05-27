@@ -14,9 +14,12 @@
 				"role": "Software Engineer",
 				"dates": "Sep. 2025 - curr.",
 				"description": [
-					"Develop the product (yet to define)"
+					"Backend and full-stack product development across a distributed AI-powered automation platform, including frontend contributions and GitOps management of the team's staging cluster.",
+					"Migrated a message templating service from Java 8 to Python/FastAPI, modernising the codebase and aligning it with the team's primary stack.",
+					"Rewrote a suite of Kafka event parsers from Python to Rust, achieving substantial reductions in memory consumption and infrastructure footprint.",
+					"Designed and built from scratch a configurable data anonymisation tool in Rust to meet customer compliance requirements, driven by per-customer anonymisation profiles."
 				],
-				"skills": ["Python", "FastAPI", "Rust", "Kubernetes"]
+				"skills": ["Python", "FastAPI", "Rust", "Kafka", "Kubernetes", "Flux"]
 			}
 		]
 	},
