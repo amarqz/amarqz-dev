@@ -6,8 +6,6 @@ on:
       - 'main'
     paths:
       - "src/docs/**"
-    branches:
-      - 'main'
 
 jobs:
   sync:
