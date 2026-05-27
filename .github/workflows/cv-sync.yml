@@ -28,7 +28,7 @@ jobs:
 
           # Inicializa un repositorio Git temporal
           git init
-          git remote add private https://amarqz:${{ secrets.PRIVATE_REPO_PAT }}@github.com/amarqz/amarqz-cv.git
+          git remote add private https://x-access-token:${{ secrets.PRIVATE_REPO_PAT }}@github.com/amarqz/amarqz-cv.git
           git fetch private main
           git checkout main || git checkout -b main
 
